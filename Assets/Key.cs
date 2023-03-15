@@ -7,9 +7,12 @@ public class Key : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _textLetter;
+
+    public char Name { get; set; }
     
-    public void SetLetter(char letter)
+    public void AssignLetter(char letter)
     {
         _textLetter.text = letter.ToString();
+        Name = letter;
     }
 }
