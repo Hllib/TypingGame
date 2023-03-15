@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class Keyboard : MonoBehaviour
 {
@@ -15,27 +16,31 @@ public class Keyboard : MonoBehaviour
 
     private void Start()
     {
-        var upperRowKeys = upperRowString.ToCharArray();
-        var middleRowKeys = middleRowString.ToCharArray();
-        var bottomRowKeys = bottomRowString.ToCharArray();
+        CreateKeyboard();
+    }
 
-        for (int i = 0; i < upperRowKeys.Length; i++)
+    private void CreateKeyboard()
+    {
+        List<char[]> keyboardsLetters = new List<char[]>()
         {
-            var keyPrefab = Instantiate(_keyPrefab, _rows[0].transform, false);
-            Key key = keyPrefab.GetComponent<Key>();
-            key.SetLetter(upperRowKeys[i]);
+            upperRowString.ToCharArray(),
+            middleRowString.ToCharArray(),
+            bottomRowString.ToCharArray()
+        };
+
+        for (int i = 0; i < keyboardsLetters.Count; i++)
+        {
+            CreateKeyRow(keyboardsLetters[i], i);
         }
-        for (int i = 0; i < middleRowKeys.Length; i++)
+    }
+
+    private void CreateKeyRow(char[] letters, int rowIndex)
+    {
+        for (int i = 0; i < letters.Length; i++)
         {
-            var keyPrefab = Instantiate(_keyPrefab, _rows[1].transform, false);
+            var keyPrefab = Instantiate(_keyPrefab, _rows[rowIndex].transform, false);
             Key key = keyPrefab.GetComponent<Key>();
-            key.SetLetter(middleRowKeys[i]);
-        }
-        for (int i = 0; i < bottomRowKeys.Length; i++)
-        {
-            var keyPrefab = Instantiate(_keyPrefab, _rows[2].transform, false);
-            Key key = keyPrefab.GetComponent<Key>();
-            key.SetLetter(bottomRowKeys[i]);
+            key.SetLetter(letters[i]);
         }
     }
 }
