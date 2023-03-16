@@ -1,14 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Jobs;
-using UnityEngine.UI;
 
 public class Keyboard : MonoBehaviour
 {
@@ -19,61 +13,72 @@ public class Keyboard : MonoBehaviour
     [SerializeField]
     private GameObject _keyPrefab;
     [SerializeField]
-    private Transform[] _rows;
+    private Transform[] _keyboardRows;
 
     private List<Key> _keyboardKeys;
-    Dictionary<string, bool> _words;
-    private List<Letter> _currentWord;
+    Dictionary<string, bool> _wordsDict;
+
+    private char _userInput;
+
+    private List<Letter> _currentWordLetters;
 
     private void Start()
     {
-        _keyboardKeys = new List<Key>();
-        _words = new Dictionary<string, bool>();
-        _currentWord = new List<Letter>();
-
+        InitFields();
         CreateKeyboard();
-        CreateWordsDictionary();
+        CreateWordsDictionary("words");
     }
 
+    private void InitFields()
+    {
+        _keyboardKeys = new List<Key>();
+        _wordsDict = new Dictionary<string, bool>();
+        _currentWordLetters = new List<Letter>();
+        _userInput = '\0';
+    }
 
     private void Update()
     {
-        char input = '\0';
         if (Input.inputString != string.Empty)
         {
-            input = Input.inputString.ToLower()[0];
+            _userInput = Input.inputString[0];
         }
 
-        var isWordFinished = _currentWord.All(letter => letter.State == true);
+        bool isWordFinished = _currentWordLetters.All(letter => letter.WasPrinted == true);
         if (isWordFinished)
         {
             LoadNextWord();
         }
 
-        if (Input.anyKeyDown && input != '\0')
+        if (Input.anyKeyDown && _userInput != '\0')
         {
-            Key key = _keyboardKeys.Find(key => key.Name == input);
+            Key pressedKey = _keyboardKeys.Find(key => key.Name == _userInput);
 
-            if (key != null)
+            if (pressedKey != null)
             {
-                StartCoroutine(IndicateClick(key));
+                StartCoroutine(ShowKeyDown(pressedKey));
             }
 
-            for (int i = 0; i < _currentWord.Count; i++)
+            CheckKeyDownResult();
+        }
+    }
+
+    private void CheckKeyDownResult()
+    {
+        for (int i = 0; i < _currentWordLetters.Count; i++)
+        {
+            if (_currentWordLetters[i].WasPrinted == false)
             {
-                if (_currentWord[i].State == false)
+                if (_userInput == _currentWordLetters[i].Character)
                 {
-                    if (input == _currentWord[i].LetterSymbol)
-                    {
-                        _currentWord[i] = new Letter(_currentWord[i].LetterSymbol, true);
-                        PrintArea.Instance.IndicatePrintLetter(i, true);
-                        break;
-                    }
-                    else
-                    {
-                        PrintArea.Instance.IndicatePrintLetter(i, false);
-                        break;
-                    }
+                    _currentWordLetters[i] = new Letter(_currentWordLetters[i].Character, true);
+                    WordPrinter.Instance.IndicateKeyCorrectHit(i, true);
+                    break;
+                }
+                else
+                {
+                    WordPrinter.Instance.IndicateKeyCorrectHit(i, false);
+                    break;
                 }
             }
         }
@@ -98,7 +103,7 @@ public class Keyboard : MonoBehaviour
     {
         for (int i = 0; i < letters.Length; i++)
         {
-            var keyPrefab = Instantiate(_keyPrefab, _rows[rowIndex].transform, false);
+            var keyPrefab = Instantiate(_keyPrefab, _keyboardRows[rowIndex].transform, false);
             Key key = keyPrefab.GetComponent<Key>();
             key.AssignLetter(letters[i]);
 
@@ -106,43 +111,46 @@ public class Keyboard : MonoBehaviour
         }
     }
 
-    IEnumerator IndicateClick(Key key)
+    IEnumerator ShowKeyDown(Key key)
     {
         key.gameObject.transform.localScale += new Vector3(10.2f, 10.2f, 1f);
         yield return new WaitForSeconds(0.09f);
         key.gameObject.transform.localScale -= new Vector3(10.2f, 10.2f, 1f);
     }
 
-    public void CreateWordsDictionary()
+    public void CreateWordsDictionary(string filename)
     {
-        string readFromFilePath = Application.streamingAssetsPath + "/" + "words" + ".txt";
+        _wordsDict.Clear();
+        string readFromFilePath = Application.streamingAssetsPath + "/" + filename + ".txt";
         List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
 
         foreach (var line in lines)
         {
-            _words.Add(line, false);
+            _wordsDict.Add(line, false);
         }
     }
 
     public void LoadNextWord()
     {
-        if (_currentWord != null)
-            _currentWord.Clear();
+        if (_currentWordLetters != null)
+        {
+            _currentWordLetters.Clear();
+        }
 
-        var anyWordsLeft = _words.Any(word => word.Value == false);
+        var anyWordsLeft = _wordsDict.Any(word => word.Value == false);
         if (anyWordsLeft)
         {
-            foreach (KeyValuePair<string, bool> word in _words)
+            foreach (KeyValuePair<string, bool> word in _wordsDict)
             {
                 if (word.Value == false)
                 {
                     for (int i = 0; i < word.Key.Length; i++)
                     {
-                        _currentWord.Add(new Letter(word.Key[i], false));
+                        _currentWordLetters.Add(new Letter(word.Key[i], false));
                     }
 
-                    _words[word.Key] = true;
-                    PrintArea.Instance.AssignWord(word.Key);
+                    _wordsDict[word.Key] = true;
+                    WordPrinter.Instance.AssignWord(word.Key);
 
                     break;
                 }
@@ -150,7 +158,7 @@ public class Keyboard : MonoBehaviour
         }
         else
         {
-            Debug.Log("Level finished!!!");
+            CreateWordsDictionary("words");
         }
 
     }
