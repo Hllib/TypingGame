@@ -1,8 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Jobs;
+using UnityEngine.UI;
 
 public class Keyboard : MonoBehaviour
 {
@@ -15,52 +22,75 @@ public class Keyboard : MonoBehaviour
     [SerializeField]
     private Transform[] _rows;
 
+    [SerializeField]
+    private TextMeshProUGUI _wordTMP;
+
     private List<Key> _keys;
+    Dictionary<string, bool> _words;
+    private List<Letter> _currentWord;
 
     private void Start()
     {
         _keys = new List<Key>();
+        _words = new Dictionary<string, bool>();
+        _currentWord = new List<Letter>();
+
         CreateKeyboard();
+        CreateWordsDictionary();
+        LoadNextWord();
     }
 
-    [SerializeField]
-    private TextMeshProUGUI _textMeshPro;
 
     private void Update()
     {
-        string input = "";
+        char input = '\0';
         if (Input.inputString != string.Empty)
         {
-            input = Input.inputString;
-            Debug.Log(Input.inputString.ToString());
+            input = Input.inputString.ToLower()[0];
         }
 
-        if (Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+        var isWordFinished = _currentWord.All(letter => letter.State == true);
+        if (isWordFinished)
         {
-            foreach (var key in _keys)
+            LoadNextWord();
+        }
+
+        if (Input.anyKeyDown && input != '\0')
+        {
+            Key key = _keys.Find(key => key.Name == input);
+            if (key != null)
             {
-                if (key.Name == input[0])
+                StartCoroutine(IndicateClick(key));
+            }
+
+            for (int i = 0; i < _currentWord.Count; i++)
+            {
+                if (_currentWord[i].State == false)
                 {
-                    _textMeshPro.text += key.Name;
-                    StartCoroutine(HideKey(key));
-                    break;
+                    _currentWord[i] = new Letter(_currentWord[i].LetterSymbol, true);
+
+                    if (input == _currentWord[i].LetterSymbol)
+                    {
+                        Debug.Log("Got it");
+                        break;
+                    }
+                    else
+                    {
+                        Debug.Log("Missed it");
+                        break;
+                    }
                 }
             }
-            if(Input.GetKeyDown(KeyCode.Space)) 
-            {
-                _textMeshPro.text += " ";
-            }
         }
-
     }
 
     private void CreateKeyboard()
     {
         List<char[]> keyboardsLetters = new List<char[]>()
         {
-            upperRowString.ToCharArray(),
-            middleRowString.ToCharArray(),
-            bottomRowString.ToCharArray()
+            upperRowString.ToLower().ToCharArray(),
+            middleRowString.ToLower().ToCharArray(),
+            bottomRowString.ToLower().ToCharArray()
         };
 
         for (int i = 0; i < keyboardsLetters.Count; i++)
@@ -81,10 +111,52 @@ public class Keyboard : MonoBehaviour
         }
     }
 
-    IEnumerator HideKey(Key key)
+    IEnumerator IndicateClick(Key key)
     {
         key.gameObject.transform.localScale += new Vector3(10.2f, 10.2f, 1f);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.09f);
         key.gameObject.transform.localScale -= new Vector3(10.2f, 10.2f, 1f);
+    }
+
+    public void CreateWordsDictionary()
+    {
+        string readFromFilePath = Application.streamingAssetsPath + "/" + "words" + ".txt";
+        List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
+
+        foreach (var line in lines)
+        {
+            _words.Add(line, false);
+        }
+    }
+
+    public void LoadNextWord()
+    {
+        if (_currentWord != null)
+            _currentWord.Clear();
+
+        var anyWordsLeft = _words.Any(word => word.Value == false);
+        if (anyWordsLeft)
+        {
+            foreach (KeyValuePair<string, bool> word in _words)
+            {
+                if (word.Value == false)
+                {
+                    for (int i = 0; i < word.Key.Length; i++)
+                    {
+                        _currentWord.Add(new Letter(word.Key[i], false));
+                    }
+
+                    _words[word.Key] = true;
+                    _wordTMP.text = word.Key;
+
+                    break;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log("Level finished!!!");
+        }
+
     }
 }
