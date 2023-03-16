@@ -22,9 +22,6 @@ public class Keyboard : MonoBehaviour
     [SerializeField]
     private Transform[] _rows;
 
-    [SerializeField]
-    private TextMeshProUGUI _wordTMP;
-
     private List<Key> _keys;
     Dictionary<string, bool> _words;
     private List<Letter> _currentWord;
@@ -37,7 +34,7 @@ public class Keyboard : MonoBehaviour
 
         CreateKeyboard();
         CreateWordsDictionary();
-        LoadNextWord();
+        //Invoke("LoadNextWord", 100.0f);
     }
 
 
@@ -147,7 +144,7 @@ public class Keyboard : MonoBehaviour
                     }
 
                     _words[word.Key] = true;
-                    _wordTMP.text = word.Key;
+                    PrintArea.Instance.AssignWord(word.Key);
 
                     break;
                 }
