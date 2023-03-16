@@ -22,19 +22,18 @@ public class Keyboard : MonoBehaviour
     [SerializeField]
     private Transform[] _rows;
 
-    private List<Key> _keys;
+    private List<Key> _keyboardKeys;
     Dictionary<string, bool> _words;
     private List<Letter> _currentWord;
 
     private void Start()
     {
-        _keys = new List<Key>();
+        _keyboardKeys = new List<Key>();
         _words = new Dictionary<string, bool>();
         _currentWord = new List<Letter>();
 
         CreateKeyboard();
         CreateWordsDictionary();
-        //Invoke("LoadNextWord", 100.0f);
     }
 
 
@@ -54,7 +53,8 @@ public class Keyboard : MonoBehaviour
 
         if (Input.anyKeyDown && input != '\0')
         {
-            Key key = _keys.Find(key => key.Name == input);
+            Key key = _keyboardKeys.Find(key => key.Name == input);
+
             if (key != null)
             {
                 StartCoroutine(IndicateClick(key));
@@ -64,16 +64,15 @@ public class Keyboard : MonoBehaviour
             {
                 if (_currentWord[i].State == false)
                 {
-                    _currentWord[i] = new Letter(_currentWord[i].LetterSymbol, true);
-
                     if (input == _currentWord[i].LetterSymbol)
                     {
-                        Debug.Log("Got it");
+                        _currentWord[i] = new Letter(_currentWord[i].LetterSymbol, true);
+                        PrintArea.Instance.IndicatePrintLetter(i, true);
                         break;
                     }
                     else
                     {
-                        Debug.Log("Missed it");
+                        PrintArea.Instance.IndicatePrintLetter(i, false);
                         break;
                     }
                 }
@@ -104,7 +103,7 @@ public class Keyboard : MonoBehaviour
             Key key = keyPrefab.GetComponent<Key>();
             key.AssignLetter(letters[i]);
 
-            _keys.Add(key);
+            _keyboardKeys.Add(key);
         }
     }
 

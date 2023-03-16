@@ -1,6 +1,10 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PrintArea : MonoBehaviour
 {
@@ -8,7 +12,8 @@ public class PrintArea : MonoBehaviour
     private GameObject _letterHolderPrefab;
 
     private const int maxLetters = 12;
-    private List<GameObject> _letters;
+    public List<GameObject> letters;
+    public List<Key> keys;
 
     private static PrintArea _instance;
     public static PrintArea Instance
@@ -31,12 +36,24 @@ public class PrintArea : MonoBehaviour
 
     private void Start()
     {
-        _letters = new List<GameObject>();
+        letters = new List<GameObject>();
+        keys = new List<Key>();
+
         for (int i = 0; i < maxLetters; i++)
         {
             var letter = Instantiate(_letterHolderPrefab, this.transform, false);
             letter.gameObject.SetActive(false);
-            _letters.Add(letter);
+            keys.Add(letter.GetComponent<Key>());
+            letters.Add(letter);
+        }
+    }
+
+    public void IndicatePrintLetter(int index, bool operationState)
+    {
+        switch(operationState)
+        {
+            case true: letters[index].SetActive(false); break;
+            case false: break;
         }
     }
 
@@ -47,14 +64,14 @@ public class PrintArea : MonoBehaviour
             Debug.LogError("word length exceeds max allowed amount");
         }
 
-        foreach(var letter in _letters)
+        foreach(var letter in letters)
         {
             letter.SetActive(false);
         }
 
         for (int i = 0; i < word.Length; i++)
         {
-            foreach (var letter  in _letters)
+            foreach (var letter  in letters)
             {
                 if(!letter.activeInHierarchy)
                 {
