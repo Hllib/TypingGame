@@ -54,7 +54,6 @@ public class Keyboard : MonoBehaviour
             {
                 StartCoroutine(ShowKeyDown(pressedKey));
             }
-
             CheckKeyDownResult();
         }
     }

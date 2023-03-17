@@ -9,4 +9,3 @@ public struct Letter
         WasPrinted = state;
     }
 }
-
