@@ -1,14 +1,12 @@
-using System;
-
 public struct Letter
 {
-    public char LetterSymbol { get; set; }
-    public bool State { get; set; }
+    public char Character { get; set; }
+    public bool WasPrinted { get; set; }
 
     public Letter(char symbol, bool state)
     {
-        LetterSymbol = symbol;
-        State = state;
+        Character = symbol;
+        WasPrinted = state;
     }
 }
 

@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyPrefab: {fileID: 4521217352321687137, guid: 3121436639c26934783247078a208f92, type: 3}
-  _rows:
+  _keyboardRows:
   - {fileID: 2092221485}
   - {fileID: 186774657}
   - {fileID: 15658262}

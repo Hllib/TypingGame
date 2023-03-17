@@ -1,28 +1,26 @@
-using JetBrains.Annotations;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PrintArea : MonoBehaviour
+public class WordPrinter : MonoBehaviour
 {
+    private const int MaxLettersInWord = 12;
+
     [SerializeField]
     private GameObject _letterHolderPrefab;
 
-    private const int maxLetters = 12;
-    public List<GameObject> letters;
-    public List<Key> keys;
+    private List<GameObject> _letterHolders;
+    private List<Key> _printableKeys;
 
-    private static PrintArea _instance;
-    public static PrintArea Instance
+    private static WordPrinter _instance;
+
+    public static WordPrinter Instance
     {
         get
         {
             if (_instance == null)
             {
-                Debug.LogError("PrintArea is NULL");
+                Debug.LogError("WordPrinter is NULL");
             }
 
             return _instance;
@@ -36,42 +34,43 @@ public class PrintArea : MonoBehaviour
 
     private void Start()
     {
-        letters = new List<GameObject>();
-        keys = new List<Key>();
+        _letterHolders = new List<GameObject>();
+        _printableKeys = new List<Key>();
 
-        for (int i = 0; i < maxLetters; i++)
+        CreateLetterHolders();
+    }
+
+    private void CreateLetterHolders()
+    {
+        for (int i = 0; i < MaxLettersInWord; i++)
         {
             var letter = Instantiate(_letterHolderPrefab, this.transform, false);
             letter.gameObject.SetActive(false);
-            keys.Add(letter.GetComponent<Key>());
-            letters.Add(letter);
+
+            _printableKeys.Add(letter.GetComponent<Key>());
+            _letterHolders.Add(letter);
         }
     }
 
-    public void IndicatePrintLetter(int index, bool operationState)
+    public void IndicateKeyCorrectHit(int index, bool operationState)
     {
         switch(operationState)
         {
-            case true: letters[index].SetActive(false); break;
+            case true: _letterHolders[index].SetActive(false); break;
             case false: break;
         }
     }
 
     public void AssignWord(string word)
     {
-        if(word.Length > maxLetters)
-        {
-            Debug.LogError("word length exceeds max allowed amount");
-        }
-
-        foreach(var letter in letters)
+        foreach(var letter in _letterHolders)
         {
             letter.SetActive(false);
         }
 
         for (int i = 0; i < word.Length; i++)
         {
-            foreach (var letter  in letters)
+            foreach (var letter  in _letterHolders)
             {
                 if(!letter.activeInHierarchy)
                 {
