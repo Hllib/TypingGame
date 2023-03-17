@@ -22,10 +22,7 @@ public class WordsGenerator
 
     public void LoadNextWord()
     {
-        if (currentWordLetters != null)
-        {
-            currentWordLetters.Clear();
-        }
+        currentWordLetters.Clear();
 
         var nextWord = _wordsDictionary.FirstOrDefault(word => word.Value == false);
         if (nextWord.Key != null)
