@@ -15,25 +15,21 @@ public class Keyboard : MonoBehaviour
     [SerializeField]
     private Transform[] _keyboardRows;
 
+    private WordsGenerator _wordGenerator;
     private List<Key> _keyboardKeys;
-    Dictionary<string, bool> _wordsDict;
-
     private char _userInput;
-
-    private List<Letter> _currentWordLetters;
 
     private void Start()
     {
         InitFields();
         CreateKeyboard();
-        CreateWordsDictionary("words");
+        _wordGenerator.CreateWordsDictionary("words0");
     }
 
     private void InitFields()
     {
+        _wordGenerator = new WordsGenerator();
         _keyboardKeys = new List<Key>();
-        _wordsDict = new Dictionary<string, bool>();
-        _currentWordLetters = new List<Letter>();
         _userInput = '\0';
     }
 
@@ -44,10 +40,10 @@ public class Keyboard : MonoBehaviour
             _userInput = Input.inputString[0];
         }
 
-        bool isWordFinished = _currentWordLetters.All(letter => letter.WasPrinted == true);
+        bool isWordFinished = _wordGenerator.currentWordLetters.All(letter => letter.WasPrinted == true);
         if (isWordFinished)
         {
-            LoadNextWord();
+            _wordGenerator.LoadNextWord();
         }
 
         if (Input.anyKeyDown && _userInput != '\0')
@@ -65,13 +61,13 @@ public class Keyboard : MonoBehaviour
 
     private void CheckKeyDownResult()
     {
-        for (int i = 0; i < _currentWordLetters.Count; i++)
+        for (int i = 0; i < _wordGenerator.currentWordLetters.Count; i++)
         {
-            if (_currentWordLetters[i].WasPrinted == false)
+            if (_wordGenerator.currentWordLetters[i].WasPrinted == false)
             {
-                if (_userInput == _currentWordLetters[i].Character)
+                if (_userInput == _wordGenerator.currentWordLetters[i].Character)
                 {
-                    _currentWordLetters[i] = new Letter(_currentWordLetters[i].Character, true);
+                    _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, true);
                     break;
                 }
@@ -116,50 +112,5 @@ public class Keyboard : MonoBehaviour
         key.gameObject.transform.localScale += new Vector3(10.2f, 10.2f, 1f);
         yield return new WaitForSeconds(0.09f);
         key.gameObject.transform.localScale -= new Vector3(10.2f, 10.2f, 1f);
-    }
-
-    public void CreateWordsDictionary(string filename)
-    {
-        _wordsDict.Clear();
-        string readFromFilePath = Application.streamingAssetsPath + "/" + filename + ".txt";
-        List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
-
-        foreach (var line in lines)
-        {
-            _wordsDict.Add(line, false);
-        }
-    }
-
-    public void LoadNextWord()
-    {
-        if (_currentWordLetters != null)
-        {
-            _currentWordLetters.Clear();
-        }
-
-        var anyWordsLeft = _wordsDict.Any(word => word.Value == false);
-        if (anyWordsLeft)
-        {
-            foreach (KeyValuePair<string, bool> word in _wordsDict)
-            {
-                if (word.Value == false)
-                {
-                    for (int i = 0; i < word.Key.Length; i++)
-                    {
-                        _currentWordLetters.Add(new Letter(word.Key[i], false));
-                    }
-
-                    _wordsDict[word.Key] = true;
-                    WordPrinter.Instance.AssignWord(word.Key);
-
-                    break;
-                }
-            }
-        }
-        else
-        {
-            CreateWordsDictionary("words");
-        }
-
     }
 }

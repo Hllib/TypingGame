@@ -20,7 +20,7 @@ public class WordPrinter : MonoBehaviour
         {
             if (_instance == null)
             {
-                Debug.LogError("PrintArea is NULL");
+                Debug.LogError("WordPrinter is NULL");
             }
 
             return _instance;
