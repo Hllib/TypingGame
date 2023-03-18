@@ -18,10 +18,7 @@ public class ObjectPooler : MonoBehaviour
         _poolObject = _poolerScriptableObject.poolObject;
         _poolAmount = _poolerScriptableObject.poolAmount;
         _willGrow = _poolerScriptableObject.willGrow;
-    }
 
-    private void Start()
-    {
         poolList = new List<GameObject>();
         for (int i = 0; i < _poolAmount; i++)
         {
