@@ -17,7 +17,7 @@ public class FloorTile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             FloorMover.Instance.SpawnNextFloorTile(1);
-            Invoke("DisableFloor", 2.0f);
+            DisableFloor();
         }
     }
 

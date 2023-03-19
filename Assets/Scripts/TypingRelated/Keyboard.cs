@@ -19,6 +19,8 @@ public class Keyboard : MonoBehaviour
     private List<Key> _keyboardKeys;
     private char _userInput;
 
+    bool isFirstWordLoaded = false;
+
     private void Start()
     {
         InitFields();
@@ -36,14 +38,16 @@ public class Keyboard : MonoBehaviour
     private void Update()
     {
         if (Input.inputString != string.Empty)
-        {
             _userInput = Input.inputString[0];
-        }
 
-        bool isWordFinished = _wordGenerator.currentWordLetters.All(letter => letter.WasPrinted == true);
-        if (isWordFinished)
+        if (_wordGenerator.currentWordLetters.All(letter => letter.WasPrinted == true))
         {
             _wordGenerator.LoadNextWord();
+            if (isFirstWordLoaded)
+                GameManager.Instance.MovePlayerCar(2);
+            else
+                isFirstWordLoaded = true;
+
         }
 
         if (Input.anyKeyDown && _userInput != '\0')

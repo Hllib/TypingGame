@@ -24,7 +24,7 @@ public class FloorMover : MonoBehaviour
 
     private void Awake()
     {
-        _instance = this;
+        _instance = this; 
     }
 
     public void SetNextSpawnPointTransform(Transform transform)

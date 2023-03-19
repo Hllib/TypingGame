@@ -29,7 +29,7 @@ public class WordsGenerator
     public void CreateWordsDictionary(string filename)
     {
         _wordsDictionary.Clear();
-        string readFromFilePath = Application.streamingAssetsPath + "/Easy/" + filename + ".txt";
+        string readFromFilePath = Application.streamingAssetsPath + "/Medium/" + filename + ".txt";
         List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
 
         foreach (var line in lines)
