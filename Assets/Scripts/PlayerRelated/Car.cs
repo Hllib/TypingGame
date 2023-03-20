@@ -1,19 +1,48 @@
+using System.Collections;
 using UnityEngine;
 
 public class Car : MonoBehaviour
 {
+    private float _initialSpeed = 20f;
     [SerializeField]
-    private float _speed = 20f;
+    private float _currentSpeed;
+    private float _speedBonus;
+    private Vector3 _moveDirection;
     private Rigidbody _rb;
+
+    private bool _canMove = false;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _moveDirection = transform.forward;
+        _currentSpeed = 0f;
     }
 
-    public void AddForceToCar(int forceMultiplier)
+    private void RestoreSpeed()
     {
-        Vector3 moveForward = transform.forward * _speed * forceMultiplier;
-        _rb.AddForce(moveForward, ForceMode.VelocityChange);
+        StopAllCoroutines();
+        _currentSpeed = _initialSpeed;
+    }
+
+    public void PushCar(float speedBonus)
+    {
+        RestoreSpeed();
+        _currentSpeed += speedBonus;
+        StartCoroutine(SlowDown());
+    }
+
+    IEnumerator SlowDown()
+    {
+        do
+        {
+            yield return new WaitForSeconds(0.2f);
+            _currentSpeed -= 0.5f;
+        } while (_currentSpeed > 0);
+    }
+
+    private void FixedUpdate()
+    {
+        _rb.MovePosition(_rb.position + _moveDirection * _currentSpeed * Time.deltaTime);
     }
 }

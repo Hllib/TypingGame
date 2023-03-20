@@ -33,9 +33,9 @@ public class GameManager : MonoBehaviour
         FloorMover.Instance.SpawnNextFloorTile(10);
     }
 
-    public void MovePlayerCar(int forceMultiplier)
+    public void MovePlayerCar(float speedBonus)
     {
-        _playerCar.AddForceToCar(forceMultiplier);
+        _playerCar.PushCar(speedBonus);
     }
 }
 

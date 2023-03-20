@@ -35,6 +35,7 @@ public class Keyboard : MonoBehaviour
         _userInput = '\0';
     }
 
+    int counter = 0;
     private void Update()
     {
         if (Input.inputString != string.Empty)
@@ -42,12 +43,15 @@ public class Keyboard : MonoBehaviour
 
         if (_wordGenerator.currentWordLetters.All(letter => letter.WasPrinted == true))
         {
-            _wordGenerator.LoadNextWord();
             if (isFirstWordLoaded)
-                GameManager.Instance.MovePlayerCar(2);
+            {
+                GameManager.Instance.MovePlayerCar(_wordGenerator.currentWordLetters.Count);
+            }
             else
+            {
                 isFirstWordLoaded = true;
-
+            }
+            _wordGenerator.LoadNextWord();
         }
 
         if (Input.anyKeyDown && _userInput != '\0')
