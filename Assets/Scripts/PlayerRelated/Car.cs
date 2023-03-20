@@ -22,7 +22,10 @@ public class Car : MonoBehaviour
     private void RestoreSpeed()
     {
         StopAllCoroutines();
-        _currentSpeed = _initialSpeed;
+        if (_currentSpeed < _initialSpeed)
+        {
+            _currentSpeed = _initialSpeed;
+        }
     }
 
     public void PushCar(float speedBonus)
@@ -37,7 +40,7 @@ public class Car : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.2f);
-            _currentSpeed -= 0.5f;
+            _currentSpeed -= 1f;
         } while (_currentSpeed > 0);
     }
 
