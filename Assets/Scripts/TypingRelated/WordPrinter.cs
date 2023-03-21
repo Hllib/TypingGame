@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WordPrinter : MonoBehaviour
@@ -55,8 +57,8 @@ public class WordPrinter : MonoBehaviour
     {
         switch(operationState)
         {
-            case true: _letterHolders[index].SetActive(false); break;
-            case false: break;
+            case true: _letterHolders[index].GetComponentInChildren<TextMeshProUGUI>().color = Color.green; break;
+            case false: _letterHolders[index].GetComponentInChildren<TextMeshProUGUI>().color = Color.red; break;
         }
     }
 
@@ -65,6 +67,7 @@ public class WordPrinter : MonoBehaviour
         foreach(var letter in _letterHolders)
         {
             letter.SetActive(false);
+            letter.GetComponentInChildren<TextMeshProUGUI>().color = Color.black;
         }
 
         for (int i = 0; i < word.Length; i++)

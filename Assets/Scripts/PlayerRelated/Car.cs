@@ -6,11 +6,8 @@ public class Car : MonoBehaviour
     private float _initialSpeed = 20f;
     [SerializeField]
     private float _currentSpeed;
-    private float _speedBonus;
     private Vector3 _moveDirection;
     private Rigidbody _rb;
-
-    private bool _canMove = false;
 
     private void Start()
     {
@@ -40,7 +37,7 @@ public class Car : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.2f);
-            _currentSpeed -= 1f;
+            _currentSpeed -= 0.8f;
         } while (_currentSpeed > 0);
     }
 

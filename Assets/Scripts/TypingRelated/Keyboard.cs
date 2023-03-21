@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Keyboard : MonoBehaviour
@@ -19,6 +20,8 @@ public class Keyboard : MonoBehaviour
     private List<Key> _keyboardKeys;
     private char _userInput;
 
+    private int _correctHits = 0;
+
     bool isFirstWordLoaded = false;
 
     private void Start()
@@ -35,7 +38,6 @@ public class Keyboard : MonoBehaviour
         _userInput = '\0';
     }
 
-    int counter = 0;
     private void Update()
     {
         if (Input.inputString != string.Empty)
@@ -45,7 +47,9 @@ public class Keyboard : MonoBehaviour
         {
             if (isFirstWordLoaded)
             {
-                GameManager.Instance.MovePlayerCar(_wordGenerator.currentWordLetters.Count);
+                Debug.Log("correct hits: " + _correctHits);
+                GameManager.Instance.MovePlayerCar(_correctHits);
+                _correctHits = 0;
             }
             else
             {
@@ -76,10 +80,12 @@ public class Keyboard : MonoBehaviour
                 {
                     _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, true);
+                    _correctHits += 1;
                     break;
                 }
                 else
                 {
+                    _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, false);
                     break;
                 }
