@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotateAround : MonoBehaviour
 {
     public float rotationSpeed;
-    public GameObject pivotPoint;
+    public Transform pivotPoint;
 
     public int rotationAxisZ;
     public int rotationAxisX;
@@ -13,6 +13,6 @@ public class RotateAround : MonoBehaviour
 
     private void Update()
     {
-        transform.RotateAround(pivotPoint.transform.position, new Vector3(rotationAxisX, rotationAxisY, rotationAxisZ), rotationSpeed * Time.deltaTime);   
+        transform.RotateAround(pivotPoint.position, new Vector3(rotationAxisX, rotationAxisY, rotationAxisZ), rotationSpeed * Time.deltaTime);   
     }
 }

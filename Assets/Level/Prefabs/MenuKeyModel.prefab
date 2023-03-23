@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 514129118615238878}
   - component: {fileID: 514129118615238877}
   - component: {fileID: 7834657240184861734}
+  - component: {fileID: 4521217353366727357}
   m_Layer: 5
   m_Name: MenuKeyModel
   m_TagString: Untagged
@@ -26,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514129118615238690}
-  m_LocalRotation: {x: 0.2784803, y: -0.19990297, z: 0.022126166, w: 0.93914753}
+  m_LocalRotation: {x: 0.27848172, y: -0.19990307, z: 0.0221242, w: 0.9391471}
   m_LocalPosition: {x: 0, y: 0, z: 124}
   m_LocalScale: {x: 50, y: 50, z: 9.999999}
   m_ConstrainProportionsScale: 1
@@ -102,7 +103,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040287517541bd14593e07f2e5eef43f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0
+  rotationSpeed: 25
+--- !u!114 &4521217353366727357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514129118615238690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51282934fa0db046afa7736d23fe0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 25
+  pivotPoint: {fileID: 0}
+  rotationAxisZ: 0
+  rotationAxisX: 0
+  rotationAxisY: 1
 --- !u!1 &514129119484656407
 GameObject:
   m_ObjectHideFlags: 0
