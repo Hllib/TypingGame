@@ -13,6 +13,6 @@ public class RotateAround : MonoBehaviour
 
     private void Update()
     {
-        transform.RotateAround(pivotObject.transform.position, new Vector3(rotationAxisX, rotationAxisY, rotationAxisZ), rotationSpeed * Time.deltaTime);   
+        transform.RotateAround(pivotPoint.transform.position, new Vector3(rotationAxisX, rotationAxisY, rotationAxisZ), rotationSpeed * Time.deltaTime);   
     }
 }
