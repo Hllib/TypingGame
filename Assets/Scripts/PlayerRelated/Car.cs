@@ -37,7 +37,7 @@ public class Car : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.2f);
-            _currentSpeed -= 0.8f;
+            _currentSpeed -= 0.5f;
         } while (_currentSpeed > 0);
     }
 
