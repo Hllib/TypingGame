@@ -10,6 +10,7 @@ public class Keyboard : MonoBehaviour
     const string upperRowString = "qwertyuiop";
     const string middleRowString = "asdfghjkl";
     const string bottomRowString = "zxcvbnm";
+    string firstFileName = "words0";
 
     [SerializeField]
     private GameObject _keyPrefab;
@@ -28,7 +29,8 @@ public class Keyboard : MonoBehaviour
     {
         InitFields();
         CreateKeyboard();
-        _wordGenerator.CreateWordsDictionary("words0");
+
+        _wordGenerator.CreateWordsDictionary(firstFileName);
     }
 
     private void InitFields()
@@ -47,7 +49,6 @@ public class Keyboard : MonoBehaviour
         {
             if (isFirstWordLoaded)
             {
-                Debug.Log("correct hits: " + _correctHits);
                 GameManager.Instance.MovePlayerCar(_correctHits);
                 _correctHits = 0;
             }

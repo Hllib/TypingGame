@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WordsGenerator
@@ -26,10 +27,30 @@ public class WordsGenerator
         };
     }
 
+    enum Difficulty
+    {
+        Easy = 1,
+        Medium = 2,
+        Hard = 3
+    }
+
+    public string ChooseWordsDifficulty()
+    {
+        switch (PlayerPrefs.GetInt("Difficulty"))
+        {
+            case (int)Difficulty.Easy: return $"/{Difficulty.Easy}/"; 
+            case (int)Difficulty.Medium: return $"/{Difficulty.Medium}/"; 
+            case (int)Difficulty.Hard: return $"/{Difficulty.Hard}/";
+            default: Debug.LogError("Difficulty was not loaded correctly"); return $"/{Difficulty.Easy}/";
+        }
+    }
+
     public void CreateWordsDictionary(string filename)
     {
+        string difficultyLevel = ChooseWordsDifficulty();
+
         _wordsDictionary.Clear();
-        string readFromFilePath = Application.streamingAssetsPath + "/Medium/" + filename + ".txt";
+        string readFromFilePath = Application.streamingAssetsPath + difficultyLevel + filename + ".txt";
         List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
 
         foreach (var line in lines)
