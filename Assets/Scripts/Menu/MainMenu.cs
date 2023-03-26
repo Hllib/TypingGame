@@ -16,6 +16,18 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void Play()
+    {
+        if(PlayerPrefs.GetInt("Difficulty") == 0)
+        {
+            //show choose difficulty panel
+        }
+        else
+        {
+            //load scene
+        }
+    }
+
     public void Quit()
     {
 #if UNITY_EDITOR
