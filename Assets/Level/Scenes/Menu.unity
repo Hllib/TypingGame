@@ -390,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -37.14972}
+  m_AnchoredPosition: {x: 126.41504, y: -37.181427}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60347023
@@ -963,6 +963,7 @@ MonoBehaviour:
   - {fileID: 875618538}
   - {fileID: 1557650922}
   - {fileID: 1838271958}
+  _isChosenFirstTime: 0
 --- !u!1 &260868458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -214.6081}
+  m_AnchoredPosition: {x: 126.41504, y: -214.83008}
   m_SizeDelta: {x: 55, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538846923
@@ -1416,7 +1417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41501, y: -32.13038}
+  m_AnchoredPosition: {x: 126.41504, y: -32.13037}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630086293
@@ -2368,7 +2369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41501, y: -82.421135}
+  m_AnchoredPosition: {x: 126.41504, y: -82.42114}
   m_SizeDelta: {x: 193.41, y: 62.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &992236462
@@ -2813,8 +2814,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1737728592}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4080,6 +4081,7 @@ MonoBehaviour:
   - {fileID: 858027996}
   - {fileID: 946811899}
   - {fileID: 52671201}
+  _isChosenFirstTime: 1
 --- !u!95 &1681868085
 Animator:
   serializedVersion: 5
@@ -4210,7 +4212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsMenuPanel: {fileID: 237787587}
-  _smallDifficultyPanel: {fileID: 0}
+  _smallDifficultyPanel: {fileID: 1681868082}
   _soundMenuPanel: {fileID: 0}
 --- !u!1 &1838271958
 GameObject:
@@ -4480,7 +4482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -157.80862}
+  m_AnchoredPosition: {x: 126.41504, y: -157.9672}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851915199
@@ -4617,7 +4619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -97.47919}
+  m_AnchoredPosition: {x: 126.41504, y: -97.57431}
   m_SizeDelta: {x: 193.41, y: 62.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040975434

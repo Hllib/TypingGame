@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,14 +9,19 @@ public class SettingsPanel : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] _stars;
-
+    [SerializeField]
     private bool _isChosenFirstTime;
     private int _currentDifficulty;
 
     private void Start()
     {
         _currentDifficulty = PlayerPrefs.GetInt("Difficulty", 0);
-        SetDifficulty(_currentDifficulty);
+        ShowStarsVisualFeedback(_currentDifficulty);
+
+        for (int i = 0; i < _currentDifficulty; i++)
+        {
+            _stars[i].GetComponent<DifficultyStar>().isChecked = true;
+        }
     }
 
     public void HideStarsVisualFeedback(int starId)
@@ -58,7 +64,7 @@ public class SettingsPanel : MonoBehaviour
         if (_isChosenFirstTime)
         {
             _isChosenFirstTime = false;
-            MainMenu.Instance.LoadScene("Main");
+            this.GetComponent<Animator>().SetTrigger("Hide");
         }
     }
 }
