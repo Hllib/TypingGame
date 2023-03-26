@@ -8,14 +8,13 @@ public class SettingsPanel : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] _stars;
-    private bool _isDifficultySet;
 
+    private bool _isChosenFirstTime;
     private int _currentDifficulty;
 
     private void Start()
     {
         _currentDifficulty = PlayerPrefs.GetInt("Difficulty", 0);
-        _currentDifficulty = 0;
         SetDifficulty(_currentDifficulty);
     }
 
@@ -43,6 +42,7 @@ public class SettingsPanel : MonoBehaviour
         for (int i = 0; i < _stars.Length; i++)
         {
             _stars[i].GetComponent<Image>().color = new Color(0, 130 / 255f, 168 / 255f);
+            _stars[i].GetComponent<DifficultyStar>().isChecked = false;
         }
 
         ShowStarsVisualFeedback(starId);
@@ -54,6 +54,11 @@ public class SettingsPanel : MonoBehaviour
 
         PlayerPrefs.SetInt("Difficulty", starId);
         _currentDifficulty = starId;
-        Debug.Log("Chosen difficulty: " + _currentDifficulty);
+
+        if (_isChosenFirstTime)
+        {
+            _isChosenFirstTime = false;
+            MainMenu.Instance.LoadScene("Main");
+        }
     }
 }

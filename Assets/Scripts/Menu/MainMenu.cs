@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,8 +7,29 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private GameObject _settingsMenuPanel;
     [SerializeField]
+    private GameObject _smallDifficultyPanel;
+    [SerializeField]
     private GameObject _soundMenuPanel;
     private bool _settingsButtonInteractionAllowed = true;
+
+    private static MainMenu _instance;
+    public static MainMenu Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("MainMenuManager is NULL");
+            }
+
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
 
     public void LoadScene(string sceneName)
     {
@@ -18,23 +38,19 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        if(PlayerPrefs.GetInt("Difficulty") == 0)
+        if (PlayerPrefs.GetInt("Difficulty") == 0)
         {
-            //show choose difficulty panel
+            _smallDifficultyPanel.SetActive(true);
         }
         else
         {
-            //load scene
+            LoadScene("Main");
         }
     }
 
     public void Quit()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
         Application.Quit();
-#endif
     }
 
     public void ShowSettingsPanel()
