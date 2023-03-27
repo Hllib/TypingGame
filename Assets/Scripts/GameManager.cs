@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,17 +28,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void ReloadGame()
+    {
+        //save stats
+        Time.timeScale = 1f;
+        LoadScene("Main");
+    }
+
+    public void LeaveGame()
+    {
+        //save stats
+        Time.timeScale = 1f;
+        LoadScene("Menu");
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            _pauseMenu.SetActive(!_pauseMenu.activeSelf);
             CheckPauseState();
         }
     }
 
     public void CheckPauseState()
     {
+        _pauseMenu.SetActive(!_pauseMenu.activeSelf);
+
         if (_pauseMenu != null)
         {
             switch (_pauseMenu.activeSelf)
