@@ -21,9 +21,4 @@ public class UIManager : MonoBehaviour
     {
         _instance = this;
     }
-
-    private void Update()
-    {
-        
-    }
 }

@@ -6,7 +6,11 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private Car _playerCar;
-    public bool IsGamePaused { get; private set; }
+    [SerializeField]
+    private GameObject _pauseMenu;
+    public bool IsPaused { get; private set; }
+    [SerializeField]
+    private Keyboard _keyboard;
 
     private static GameManager _instance;
 
@@ -21,6 +25,47 @@ public class GameManager : MonoBehaviour
 
             return _instance;
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _pauseMenu.SetActive(!_pauseMenu.activeSelf);
+            CheckPauseState();
+        }
+    }
+
+    public void CheckPauseState()
+    {
+        if (_pauseMenu != null)
+        {
+            switch (_pauseMenu.activeSelf)
+            {
+                case true:
+                    StartPause();
+                    break;
+                case false:
+                    StopPause();
+                    break;
+            }
+        }
+    }
+
+    private void StopPause()
+    {
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+        IsPaused = false;
+        _keyboard.enabled = true;
+    }
+
+    private void StartPause()
+    {
+        _keyboard.enabled = false;
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+        IsPaused = true;
     }
 
     private void Awake()

@@ -44,11 +44,6 @@ public class Keyboard : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.IsGamePaused)
-        {
-            return;
-        }
-
         if (Input.inputString != string.Empty)
             _userInput = Input.inputString[0];
 

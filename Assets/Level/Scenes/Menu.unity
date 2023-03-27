@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 60347024}
   - component: {fileID: 60347023}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Difficulty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,7 +390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -37.16009}
+  m_AnchoredPosition: {x: 126.41501, y: -37.154327}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60347023
@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 538846924}
   - component: {fileID: 538846923}
   m_Layer: 5
-  m_Name: 1 (1)
+  m_Name: Reset_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1220,7 +1220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -214.68065}
+  m_AnchoredPosition: {x: 126.41501, y: -214.64023}
   m_SizeDelta: {x: 55, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538846923
@@ -1266,19 +1266,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 538846926}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1737728592}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Main
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &538846924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1301,7 +1289,7 @@ Animator:
   m_GameObject: {fileID: 538846921}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af1bc16329795224e9c9c95c7754aaf5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 393f5334b11f0d545b61a31b6a3de1a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4459,7 +4447,7 @@ GameObject:
   - component: {fileID: 1851915200}
   - component: {fileID: 1851915199}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4482,7 +4470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -157.86046}
+  m_AnchoredPosition: {x: 126.41501, y: -157.8316}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851915199
@@ -4619,7 +4607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 126.41504, y: -97.51028}
+  m_AnchoredPosition: {x: 126.41501, y: -97.49295}
   m_SizeDelta: {x: 193.41, y: 62.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040975434
