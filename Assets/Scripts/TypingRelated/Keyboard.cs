@@ -13,6 +13,8 @@ public class Keyboard : MonoBehaviour
     string firstFileName = "words0";
 
     [SerializeField]
+    private Car _playerCar;
+    [SerializeField]
     private GameObject _keyPrefab;
     [SerializeField]
     private Transform[] _keyboardRows;
@@ -42,6 +44,11 @@ public class Keyboard : MonoBehaviour
 
     private void Update()
     {
+        if(GameManager.Instance.IsGamePaused)
+        {
+            return;
+        }
+
         if (Input.inputString != string.Empty)
             _userInput = Input.inputString[0];
 
@@ -49,7 +56,7 @@ public class Keyboard : MonoBehaviour
         {
             if (isFirstWordLoaded)
             {
-                GameManager.Instance.MovePlayerCar(_correctHits);
+                _playerCar.PushCar(_correctHits);
                 _correctHits = 0;
             }
             else
