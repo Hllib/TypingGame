@@ -13,7 +13,7 @@ public class Keyboard : MonoBehaviour
     string firstFileName = "words0";
 
     [SerializeField]
-    private Car _playerCar;
+    private PlayerCar _playerCar;
     [SerializeField]
     private GameObject _keyPrefab;
     [SerializeField]

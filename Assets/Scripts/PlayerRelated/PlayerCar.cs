@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class Car : MonoBehaviour
+public class PlayerCar : MonoBehaviour
 {
     private float _initialSpeed = 20f;
     [SerializeField]
-    private float _currentSpeed;
+    public float currentSpeed;
     private Vector3 _moveDirection;
     private Rigidbody _rb;
 
@@ -13,22 +13,22 @@ public class Car : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _moveDirection = transform.forward;
-        _currentSpeed = 0f;
+        currentSpeed = 0f;
     }
 
     private void RestoreSpeed()
     {
         StopAllCoroutines();
-        if (_currentSpeed < _initialSpeed)
+        if (currentSpeed < _initialSpeed)
         {
-            _currentSpeed = _initialSpeed;
+            currentSpeed = _initialSpeed;
         }
     }
 
     public void PushCar(float speedBonus)
     {
         RestoreSpeed();
-        _currentSpeed += speedBonus;
+        currentSpeed += speedBonus;
         StartCoroutine(SlowDown());
     }
 
@@ -37,12 +37,12 @@ public class Car : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.2f);
-            _currentSpeed -= 0.5f;
-        } while (_currentSpeed > 0);
+            currentSpeed -= 0.5f;
+        } while (currentSpeed > 0);
     }
 
     private void FixedUpdate()
     {
-        _rb.MovePosition(_rb.position + _moveDirection * _currentSpeed * Time.deltaTime);
+        _rb.MovePosition(_rb.position + _moveDirection * currentSpeed * Time.deltaTime);
     }
 }

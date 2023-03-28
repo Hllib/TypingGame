@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private Car _playerCar;
+    private PlayerCar _playerCar;
     [SerializeField]
     private GameObject _pauseMenu;
     public bool IsPaused { get; private set; }
