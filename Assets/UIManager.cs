@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject _countdown;
+
     private static UIManager _instance;
     public static UIManager Instance
     {
@@ -20,5 +23,15 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+    }
+
+    public void StartCountDown()
+    {
+        _countdown.SetActive(true);
+    }
+
+    public void StopCountDown()
+    {
+        _countdown.SetActive(false);
     }
 }

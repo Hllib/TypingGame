@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LineOfSightPolice : MonoBehaviour
 {
+    [SerializeField]
+    private PoliceCar _policeCar;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Main");
+            UIManager.Instance.StartCountDown();
+            _policeCar.LevelPlayerSpeed(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            UIManager.Instance.StopCountDown();
+            _policeCar.LevelPlayerSpeed(false);
         }
     }
 }

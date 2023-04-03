@@ -15,16 +15,19 @@ public class PoliceCar : MonoBehaviour
     private float _distanceToPlayer;
 
     private const float MaxDistanceToPlayer = 12.7f;
+    private const float CloseRangeDistance = 3.0f;
     private float _startChaseSpeed;
     private float _stopChaseSpeed;
 
     private bool _isApproaching;
     private bool _isDroppingSpeed;
+    private bool _hasReachedPlayer;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _moveDirection = transform.forward;
+        _hasReachedPlayer = false;
         ChooseDiffuculty();
     }
 
@@ -78,19 +81,29 @@ public class PoliceCar : MonoBehaviour
 
     IEnumerator ApproachPlayer()
     {
-        while (true)
+        while (_distanceToPlayer > CloseRangeDistance)
         {
-            yield return new WaitForSeconds(2f);
-            _currentSpeed += 1f;
+            yield return new WaitForSeconds(1f);
+            _currentSpeed = _playerCar.currentSpeed + 0.5f;
         }
+
+        _currentSpeed = _playerCar.currentSpeed;
+        _isApproaching = false;
     }
 
     IEnumerator ReturnToMaxDistance()
     {
+        float offset = 3f;
         while (_distanceToPlayer < MaxDistanceToPlayer)
         {
             yield return new WaitForSeconds(1f);
-            _currentSpeed -= 1f;
+            _currentSpeed -= 0.5f;
+        }
+
+        while(_distanceToPlayer > MaxDistanceToPlayer + offset)
+        {
+            yield return new WaitForSeconds(0.1f);
+            _currentSpeed += 3f;
         }
 
         _currentSpeed = _playerCar.currentSpeed;
@@ -100,12 +113,13 @@ public class PoliceCar : MonoBehaviour
     private void Update()
     {
         _distanceToPlayer = Vector3.Distance(transform.position, _playerCar.transform.position);
+        Debug.Log(_distanceToPlayer);
 
         if (_playerCar.currentSpeed > 0f)
         {
             CheckChaseState();
         }
-        if (!_isApproaching && !_isDroppingSpeed)
+        if ((!_isApproaching && !_isDroppingSpeed))
         {
             _currentSpeed = _playerCar.currentSpeed;
         }
@@ -115,4 +129,10 @@ public class PoliceCar : MonoBehaviour
     {
         _rb.MovePosition(_rb.position + _moveDirection * _currentSpeed * Time.deltaTime);
     }
+
+    public void LevelPlayerSpeed(bool state)
+    {
+        _hasReachedPlayer = state;
+    }
+
 }

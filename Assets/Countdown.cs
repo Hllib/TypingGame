@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Countdown : MonoBehaviour
+{
+    public void EndGame()
+    {
+        GameManager.Instance.ReloadGame();
+    }
+}
