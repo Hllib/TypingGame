@@ -16,11 +16,10 @@ public class RivalCar : MonoBehaviour
     private PlayerCar _playerCar;
 
     private float _distanceToPlayer;
-    private const float MaxDistanceBehind = -12f;
-    private const float MaxDistanceAhead = 15f;
 
     private float _minSpeed;
     private float _maxSpeed;
+    private float _speed;
 
     private void Start()
     {
@@ -28,6 +27,7 @@ public class RivalCar : MonoBehaviour
         _moveDirection = transform.forward;
         ChooseDiffuculty();
         Invoke("StopHoldingDistance", 5f);
+        StartCoroutine(ChangeSpeed());
     }
 
     enum Difficulty
@@ -57,20 +57,12 @@ public class RivalCar : MonoBehaviour
     }
 
     private bool _isHoldingDistance = true;
-    private bool _isFallingBehind = false;
-    private bool _isGoingTooFar = false;
 
     private void Update()
     {
-        //Debug.Log("Rival: " + _currentSpeed + " Player: " + " Distance: " + _distanceToPlayer);
-        //Debug.Log("falling behind? - " + _isFallingBehind + " too far? - " + _isGoingTooFar);
+        Debug.Log("Rival: " + _currentSpeed + " Player: " + _playerCar.currentSpeed + " Distance: " + _distanceToPlayer);
 
         _distanceToPlayer = transform.position.z - _playerCar.transform.position.z;
-
-        _isFallingBehind = _distanceToPlayer < MaxDistanceBehind ? true : false;
-        _isGoingTooFar = _distanceToPlayer > MaxDistanceAhead ? true : false;
-
-        _currentSpeed = _isHoldingDistance ? _playerCar.currentSpeed : _minSpeed;
     }
 
     private void StopHoldingDistance()
@@ -80,6 +72,17 @@ public class RivalCar : MonoBehaviour
 
     private void FixedUpdate()
     {
+        _currentSpeed = _isHoldingDistance ? _playerCar.currentSpeed : _speed;
+
         _rb.MovePosition(_rb.position + _moveDirection * _currentSpeed * Time.deltaTime);
+    }
+
+    IEnumerator ChangeSpeed()
+    {
+        while (true)
+        {
+            _speed = Random.Range(_minSpeed, _maxSpeed);
+            yield return new WaitForSeconds(5f);
+        }
     }
 }

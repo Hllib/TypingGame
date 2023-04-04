@@ -1054,24 +1054,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435968860}
   m_CullTransparentMesh: 1
---- !u!1 &447099980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1938519733596007800, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-  m_PrefabInstance: {fileID: 1938519733590639831}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &447099983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447099980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e957f2a944620408c91f0d5e29bbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _policeCar: {fileID: 1526671141}
 --- !u!1 &457461938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,17 +3288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _letterHolderPrefab: {fileID: 6864964470540804161, guid: 4d0d35ee93974ba448e054043b55ab47, type: 3}
---- !u!114 &1526671141 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8475172894234991102, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-  m_PrefabInstance: {fileID: 1938519733590639831}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8097227f53275ab4ca097a872c58790a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1575914433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4649,7 +4620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Size.z
-      value: 0.57824886
+      value: 0.67281634
       objectReference: {fileID: 0}
     - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Center.x
@@ -4657,7 +4628,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Center.z
-      value: -1.0176764
+      value: -1.9578507
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938519733596007800, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
+      propertyPath: m_Name
+      value: Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475172894234991101, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475172894234991101, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 8475172894234991102, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: _playerCar
@@ -4720,6 +4703,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5020206079699820594, guid: 01de1c3a3177673458d359b134875a55, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020206079699820594, guid: 01de1c3a3177673458d359b134875a55, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 5020206079699820607, guid: 01de1c3a3177673458d359b134875a55, type: 3}
       propertyPath: m_Name
       value: PlayerCar
