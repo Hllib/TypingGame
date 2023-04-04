@@ -4292,6 +4292,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923280037}
   m_CullTransparentMesh: 1
+--- !u!1 &1926785877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1938519733596007800, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
+  m_PrefabInstance: {fileID: 1938519733590639831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1926785880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926785877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981a5409a9d7b7f409f7fcd9ad16f55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2053013208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,34 +4631,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_Size.x
-      value: 2.6636927
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_Size.z
-      value: 0.67281634
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_Center.x
-      value: 0.08757652
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_Center.z
-      value: -1.9578507
-      objectReference: {fileID: 0}
-    - target: {fileID: 1938519733596007800, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_Name
-      value: Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 8475172894234991101, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8475172894234991101, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 8475172894234991102, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: _playerCar
       value: 
@@ -4703,21 +4692,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5020206079699820594, guid: 01de1c3a3177673458d359b134875a55, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5020206079699820594, guid: 01de1c3a3177673458d359b134875a55, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 5020206079699820607, guid: 01de1c3a3177673458d359b134875a55, type: 3}
       propertyPath: m_Name
       value: PlayerCar
-      objectReference: {fileID: 0}
-    - target: {fileID: 5290096809810665491, guid: 01de1c3a3177673458d359b134875a55, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5683694979175938693, guid: 01de1c3a3177673458d359b134875a55, type: 3}
       propertyPath: m_RootOrder
