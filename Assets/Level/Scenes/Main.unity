@@ -4649,7 +4649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Size.z
-      value: 2.8700047
+      value: 0.57824886
       objectReference: {fileID: 0}
     - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Center.x
@@ -4657,7 +4657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1938519733596007782, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Center.z
-      value: -1.0056605
+      value: -1.0176764
       objectReference: {fileID: 0}
     - target: {fileID: 8475172894234991102, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: _playerCar
@@ -4665,7 +4665,7 @@ PrefabInstance:
       objectReference: {fileID: 543450652352269344}
     - target: {fileID: 8475172894234991103, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_Name
-      value: PoliceCar
+      value: RivalCar
       objectReference: {fileID: 0}
     - target: {fileID: 9139506188572230469, guid: fa5ee7d541045bb4ca6ee2a23be8892f, type: 3}
       propertyPath: m_RootOrder
