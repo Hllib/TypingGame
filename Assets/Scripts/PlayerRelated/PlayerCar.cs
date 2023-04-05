@@ -27,9 +27,12 @@ public class PlayerCar : MonoBehaviour
 
     public void PushCar(float speedBonus)
     {
-        RestoreSpeed();
-        currentSpeed += speedBonus;
-        StartCoroutine(SlowDown());
+        if(speedBonus > 0)
+        {
+            RestoreSpeed();
+            currentSpeed += speedBonus;
+            StartCoroutine(SlowDown());
+        }
     }
 
     IEnumerator SlowDown()

@@ -16,6 +16,7 @@ public class RivalCar : MonoBehaviour
     private PlayerCar _playerCar;
 
     private float _distanceToPlayer;
+    private const float CountdownStartDistance = 3f;
 
     private float _minSpeed;
     private float _maxSpeed;
@@ -58,11 +59,23 @@ public class RivalCar : MonoBehaviour
 
     private bool _isHoldingDistance = true;
 
+    private bool _isCountdownGoing;
+
     private void Update()
     {
         Debug.Log("Rival: " + _currentSpeed + " Player: " + _playerCar.currentSpeed + " Distance: " + _distanceToPlayer);
 
         _distanceToPlayer = transform.position.z - _playerCar.transform.position.z;
+        if(_distanceToPlayer > CountdownStartDistance && !_isCountdownGoing)
+        {
+            UIManager.Instance.StartCountDown();
+            _isCountdownGoing = true;
+        }
+        else if(_distanceToPlayer < CountdownStartDistance && _isCountdownGoing)
+        {
+            _isCountdownGoing = false;
+            UIManager.Instance.StopCountDown();
+        }
     }
 
     private void StopHoldingDistance()
