@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
@@ -15,14 +17,17 @@ public class ObjectPooler : MonoBehaviour
 
     private void Awake()
     {
-        _poolObject = _poolerScriptableObject.poolObject;
+        _poolObject = _poolerScriptableObject.poolObjectVariants[0];
         _poolAmount = _poolerScriptableObject.poolAmount;
         _willGrow = _poolerScriptableObject.willGrow;
 
         poolList = new List<GameObject>();
         for (int i = 0; i < _poolAmount; i++)
         {
-            GameObject obj = Instantiate(_poolObject);
+            int index = Random.Range(0, _poolerScriptableObject.poolObjectVariants.Length);
+
+
+            GameObject obj = Instantiate(_poolerScriptableObject.poolObjectVariants[index]);
             obj.transform.SetParent(transform, true);
             obj.SetActive(false);
             poolList.Add(obj);
@@ -39,12 +44,19 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject GetPooledObject()
     {
-        for (int i = 0; i < poolList.Count; i++)
+        /*for (int i = 0; i < poolList.Count; i++)
         {
             if (!poolList[i].activeInHierarchy)
             {
                 return poolList[i];
             }
+        }*/
+
+        var activeObjects = poolList.Where(obj => obj.activeInHierarchy == false);
+        if(activeObjects.Count() > 0)
+        {
+            int index = Random.Range(0, activeObjects.Count());
+            return activeObjects.ElementAt(index);
         }
 
         if (_willGrow)
