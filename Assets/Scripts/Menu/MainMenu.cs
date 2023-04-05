@@ -53,6 +53,11 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void DeleteStats()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void ShowSettingsPanel()
     {
         if (!_settingsMenuPanel.activeInHierarchy)
@@ -77,6 +82,5 @@ public class MainMenu : MonoBehaviour
 
         _settingsMenuPanel.SetActive(false);
         _settingsButtonInteractionAllowed = true;
-
     }
 }
