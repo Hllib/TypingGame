@@ -27,7 +27,7 @@ public class PlayerCar : MonoBehaviour
 
     public void PushCar(float speedBonus)
     {
-        if(speedBonus > 0)
+        if (speedBonus > 0)
         {
             RestoreSpeed();
             currentSpeed += speedBonus;

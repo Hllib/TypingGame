@@ -25,6 +25,10 @@ public class Keyboard : MonoBehaviour
 
     private int _correctHits = 0;
 
+    private int _currentScore;
+    private int _currentWordsCount;
+    private float _currentTime;
+
     bool isFirstWordLoaded = false;
 
     private void Start()
@@ -42,6 +46,16 @@ public class Keyboard : MonoBehaviour
         _userInput = '\0';
     }
 
+    private void UpdateCurrentStats()
+    {
+        _currentScore += _correctHits;
+        if (_correctHits > 0)
+        {
+            _currentWordsCount += 1;
+        }
+        _currentTime = Mathf.Round(Time.time / 60);
+    }
+
     private void Update()
     {
         if (Input.inputString != string.Empty)
@@ -52,6 +66,8 @@ public class Keyboard : MonoBehaviour
             if (isFirstWordLoaded)
             {
                 _playerCar.PushCar(_correctHits);
+                UpdateCurrentStats();
+                GameManager.Instance.UpdateStats(_currentScore, _currentWordsCount, _currentTime);
                 _correctHits = 0;
             }
             else
