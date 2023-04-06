@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880317207959290724}
   m_Layer: 0
-  m_Name: Free Racing Car
+  m_Name: Car3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -24,6 +24,17 @@ public class SettingsPanel : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        _currentDifficulty = PlayerPrefs.GetInt("Difficulty", 0);
+        ShowStarsVisualFeedback(_currentDifficulty);
+
+        for (int i = 0; i < _currentDifficulty; i++)
+        {
+            _stars[i].GetComponent<DifficultyStar>().isChecked = true;
+        }
+    }
+
     public void HideStarsVisualFeedback(int starId)
     {
         for (int i = 0; i < starId; i++)

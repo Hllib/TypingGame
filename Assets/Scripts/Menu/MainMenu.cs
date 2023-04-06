@@ -73,6 +73,32 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void ShowSoundPanel()
+    {
+        if (!_soundMenuPanel.activeInHierarchy)
+        {
+            if (_settingsButtonInteractionAllowed)
+            {
+                _soundMenuPanel.SetActive(true);
+            }
+        }
+        else
+        {
+            StartCoroutine(HideSoundPanel());
+        }
+    }
+
+    IEnumerator HideSoundPanel()
+    {
+        _settingsButtonInteractionAllowed = false;
+        _soundMenuPanel.GetComponent<Animator>().SetTrigger("Hide");
+
+        yield return new WaitForSeconds(1.5f);
+
+        _soundMenuPanel.SetActive(false);
+        _settingsButtonInteractionAllowed = true;
+    }
+
     IEnumerator HideSettingsPanel()
     {
         _settingsButtonInteractionAllowed = false;
