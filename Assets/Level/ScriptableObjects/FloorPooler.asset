@@ -19,5 +19,9 @@ MonoBehaviour:
   - {fileID: 1098540787219978014, guid: 9c84d4cc392b3b845a2c724044dbfb17, type: 3}
   - {fileID: 1098540787219978014, guid: b526e09c21a2fac4591a12c0e9501da1, type: 3}
   - {fileID: 1098540787219978014, guid: 2bdb8b7cc9c85e64c9cdc9755f61b322, type: 3}
+  - {fileID: 1098540787219978014, guid: 590591a18ed4e354fa6dda67c0f398bd, type: 3}
+  - {fileID: 1098540787219978014, guid: 46892e0faf18dcd42a2a9d15bdc3e705, type: 3}
+  - {fileID: 1098540787219978014, guid: 780a9db22c78dc44db13dd10c4c5d0ea, type: 3}
+  - {fileID: 1098540787219978014, guid: df9e177064d482f468bc89d6f6f44de9, type: 3}
   poolAmount: 10
   willGrow: 1
