@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    private GameObject _poolObject;
+    private List<GameObject> _poolObjects;
     private int _poolAmount;
     private bool _willGrow;
 
@@ -17,17 +17,21 @@ public class ObjectPooler : MonoBehaviour
 
     private void Awake()
     {
-        _poolObject = _poolerScriptableObject.poolObjectVariants[0];
+        _poolObjects = _poolerScriptableObject.poolObjectVariants;
         _poolAmount = _poolerScriptableObject.poolAmount;
         _willGrow = _poolerScriptableObject.willGrow;
 
         poolList = new List<GameObject>();
+        int index = 0;
         for (int i = 0; i < _poolAmount; i++)
         {
-            int index = Random.Range(0, _poolerScriptableObject.poolObjectVariants.Length);
+            if(index >= _poolObjects.Count)
+            {
+                index = 0;
+            }
+            GameObject obj = Instantiate(_poolObjects[index]);
+            index++;
 
-
-            GameObject obj = Instantiate(_poolerScriptableObject.poolObjectVariants[index]);
             obj.transform.SetParent(transform, true);
             obj.SetActive(false);
             poolList.Add(obj);
@@ -44,14 +48,6 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject GetPooledObject()
     {
-        /*for (int i = 0; i < poolList.Count; i++)
-        {
-            if (!poolList[i].activeInHierarchy)
-            {
-                return poolList[i];
-            }
-        }*/
-
         var activeObjects = poolList.Where(obj => obj.activeInHierarchy == false);
         if(activeObjects.Count() > 0)
         {
@@ -61,7 +57,8 @@ public class ObjectPooler : MonoBehaviour
 
         if (_willGrow)
         {
-            GameObject obj = Instantiate(_poolObject);
+            int index = Random.Range(0, _poolObjects.Count - 1);
+            GameObject obj = Instantiate(_poolObjects.ElementAt(index));
             poolList.Add(obj);
             obj.transform.SetParent(transform, true);
             return obj;

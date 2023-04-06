@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         FloorMover.Instance.ActivatePoolObjects(1);
-        FloorMover.Instance.SpawnNextFloorTile(10);
+        FloorMover.Instance.SpawnNextFloorTile(5);
         LoadStats();
     }
 }

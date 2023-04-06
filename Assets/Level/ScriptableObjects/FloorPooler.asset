@@ -15,5 +15,9 @@ MonoBehaviour:
   poolObjectVariants:
   - {fileID: 1098540787219978014, guid: 86c3849b49f441b438428d2344c99f3e, type: 3}
   - {fileID: 1098540787219978014, guid: c2aaf805beb141e4393c99d86daf533e, type: 3}
-  poolAmount: 15
+  - {fileID: 1098540787219978014, guid: 2849fff34b052aa48b08b8cf1ead0419, type: 3}
+  - {fileID: 1098540787219978014, guid: 9c84d4cc392b3b845a2c724044dbfb17, type: 3}
+  - {fileID: 1098540787219978014, guid: b526e09c21a2fac4591a12c0e9501da1, type: 3}
+  - {fileID: 1098540787219978014, guid: 2bdb8b7cc9c85e64c9cdc9755f61b322, type: 3}
+  poolAmount: 10
   willGrow: 1
