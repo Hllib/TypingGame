@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: FloorPooler
   m_EditorClassIdentifier: 
   poolObjectVariants:
-  - {fileID: 1098540787219978014, guid: c5df74f58c89f074fb6bfbc47d04ddf1, type: 3}
-  - {fileID: 1098540787219978014, guid: ffc94861375f94b449feae8e1189e41a, type: 3}
-  - {fileID: 1098540787219978014, guid: 62ab2f3f385698f47b32ce9f5a7fbae0, type: 3}
-  poolAmount: 30
+  - {fileID: 1098540787219978014, guid: 86c3849b49f441b438428d2344c99f3e, type: 3}
+  - {fileID: 1098540787219978014, guid: c2aaf805beb141e4393c99d86daf533e, type: 3}
+  poolAmount: 15
   willGrow: 1
