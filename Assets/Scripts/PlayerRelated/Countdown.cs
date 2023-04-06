@@ -6,6 +6,6 @@ public class Countdown : MonoBehaviour
 {
     public void EndGame()
     {
-        GameManager.Instance.ReloadGame();
+        GameManager.Instance.CheckPauseState();
     }
 }
