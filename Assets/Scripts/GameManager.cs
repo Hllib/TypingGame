@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -64,8 +65,12 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.UpdateStats(stats);
     }
 
-    public void UpdateStats(int currentScore, int currentWordsCount, float currentTime)
+    public void UpdateStats(int currentScore, int currentWordsCount, float currentTime, int totalHits)
     {
+        float wpm = ((totalHits / 5) / currentTime);
+        float acc = currentScore * 100 / totalHits;
+        float awpm = wpm * acc / 100;
+
         int scoreSurplus = currentScore - CurrentScore;
         int wordsSurplus = currentWordsCount - CurrentWordsCount;
         float timeSurplus = currentTime - CurrentTime;
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
         var stats = (scoretStats, wordsCountStats, timeStats);
 
         UIManager.Instance.UpdateStats(stats);
+        UIManager.Instance.UpdateWPM(awpm);
     }
 
     public void SaveStats()
@@ -117,7 +123,7 @@ public class GameManager : MonoBehaviour
 
     public void LeaveGame()
     {
-        //save stats
+        SaveStats();
         Time.timeScale = 1f;
         LoadScene("Menu");
     }

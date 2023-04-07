@@ -8,6 +8,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _countdown;
+    [SerializeField] private TextMeshProUGUI _wordsPerMinute;
 
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI _currentScore;
@@ -49,6 +50,11 @@ public class UIManager : MonoBehaviour
     public void StopCountDown()
     {
         _countdown.SetActive(false);
+    }
+
+    public void UpdateWPM(float wpm)
+    {
+        _wordsPerMinute.text = $"wpm : {wpm}";
     }
 
     public void UpdateStats(((int, int, int), (int, int, int), (float, float, float)) statistics)

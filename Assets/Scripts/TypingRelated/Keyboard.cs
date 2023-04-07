@@ -24,6 +24,7 @@ public class Keyboard : MonoBehaviour
     private char _userInput;
 
     private int _correctHits = 0;
+    private int _totalHits = 0;
 
     private int _currentScore;
     private int _currentWordsCount;
@@ -53,7 +54,7 @@ public class Keyboard : MonoBehaviour
         {
             _currentWordsCount += 1;
         }
-        _currentTime = Mathf.Round(Time.time / 60);
+        _currentTime = Time.time / 60;
     }
 
     private void Update()
@@ -67,7 +68,7 @@ public class Keyboard : MonoBehaviour
             {
                 _playerCar.PushCar(_correctHits);
                 UpdateCurrentStats();
-                GameManager.Instance.UpdateStats(_currentScore, _currentWordsCount, _currentTime);
+                GameManager.Instance.UpdateStats(_currentScore, _currentWordsCount, _currentTime, _totalHits);
                 _correctHits = 0;
             }
             else
@@ -99,6 +100,7 @@ public class Keyboard : MonoBehaviour
                 {
                     _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, true);
+                    _totalHits += 1;
                     _correctHits += 1;
                     break;
                 }
@@ -106,6 +108,7 @@ public class Keyboard : MonoBehaviour
                 {
                     _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, false);
+                    _totalHits += 1;
                     break;
                 }
             }
