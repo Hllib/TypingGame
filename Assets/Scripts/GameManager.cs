@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,13 +22,15 @@ public class GameManager : MonoBehaviour
     private static float BestWPM;
     private static float TotalWPM;
 
-    private static int CurrentScore;
-    private static int BestScore;
-    private static int TotalScore;
+    private static int TotalHits;
+    private static int TotalCorrectHits;
 
-    private static int CurrentWordsCount;
-    private static int BestWordsCount;
-    private static int TotalWordsCount;
+    private static int CurrentTotalHits;
+    private static int CurrentCorrectHits;
+
+    private static float CurrentAccuracy;
+    private static float BestAccuracy;
+    private static float TotalAccuracy;
 
     private static float CurrentTime;
     private static float BestTime;
@@ -50,68 +53,74 @@ public class GameManager : MonoBehaviour
 
     public void LoadStats()
     {
-        CurrentWordsCount = 0;
-        BestWordsCount = PlayerPrefs.GetInt("BestWordsCount", 0);
-        TotalWordsCount = PlayerPrefs.GetInt("TotalWordsCount", 0);
-        ValueTuple<int, int, int> wordsCountStats = (CurrentWordsCount, BestWordsCount, TotalWordsCount);
+        TotalHits = PlayerPrefs.GetInt("TotalHits", 0);
+        TotalCorrectHits = PlayerPrefs.GetInt("TotalCorrectHits", 0);
 
-        CurrentScore = 0;
-        BestScore = PlayerPrefs.GetInt("BestScore", 0);
-        TotalScore = PlayerPrefs.GetInt("TotalScore", 0);
-        ValueTuple<int, int, int> scoretStats = (CurrentScore, BestScore, TotalScore);
+        CurrentWPM = 0;
+        BestWPM = PlayerPrefs.GetFloat("BestWPM", 0);
+        TotalWPM = PlayerPrefs.GetFloat("TotalWPM", 0);
+        ValueTuple<float, float, float> wpm = (CurrentWPM, BestWPM, TotalWPM);
+
+        CurrentAccuracy = 0;
+        BestAccuracy = PlayerPrefs.GetFloat("BestAccuracy", 0);
+        TotalAccuracy = PlayerPrefs.GetFloat("TotalAccuracy", 0);
+        ValueTuple<float, float, float> accuracy = (CurrentAccuracy, BestAccuracy, TotalAccuracy);
 
         CurrentTime = 0;
         BestTime = PlayerPrefs.GetFloat("BestTime", 0);
         TotalTime = PlayerPrefs.GetFloat("TotalTime", 0);
-        ValueTuple<float, float, float> timeStats = (CurrentTime, BestTime, TotalTime);
+        ValueTuple<float, float, float> time = (CurrentTime, BestTime, TotalTime);
 
-        var stats = (scoretStats, wordsCountStats, timeStats);
+        var stats = (wpm, accuracy, time);
 
         UIManager.Instance.UpdateStats(stats);
     }
 
-    public void UpdateStats(int currentScore, int currentWordsCount, float currentTime, int totalHits)
+    public void UpdateStats(int correctHits, int totalHits, float currentTime)
     {
-        float wpm = ((totalHits / 5) / currentTime);
-        float acc = currentScore * 100 / totalHits;
-        float awpm = wpm * acc / 100;
-
-        int scoreSurplus = currentScore - CurrentScore;
-        int wordsSurplus = currentWordsCount - CurrentWordsCount;
         float timeSurplus = currentTime - CurrentTime;
+        int correctHitsSurplus = correctHits - CurrentCorrectHits;
+        int totalHitsSurplus = totalHits - CurrentTotalHits;
 
-        CurrentScore = currentScore;
-        CurrentWordsCount = currentWordsCount;
+        CurrentCorrectHits = correctHits;
+        CurrentTotalHits = totalHits;
+
+        CurrentWPM = ((totalHits / 5) / currentTime);
+        CurrentAccuracy = correctHits * 100 / totalHits;
         CurrentTime = currentTime;
 
-        BestScore = CurrentScore > BestScore ? CurrentScore : BestScore;
-        BestWordsCount = CurrentWordsCount > BestWordsCount ? CurrentWordsCount : BestWordsCount;
+        BestWPM = CurrentWPM > BestWPM ? CurrentWPM : BestWPM;
+        BestAccuracy = CurrentAccuracy > BestAccuracy ? CurrentAccuracy : BestAccuracy;
         BestTime = CurrentTime > BestTime ? CurrentTime : BestTime;
 
-        TotalScore += scoreSurplus;
-        TotalWordsCount += wordsSurplus;
+        TotalCorrectHits += correctHitsSurplus;
+        TotalHits += totalHitsSurplus;
         TotalTime += timeSurplus;
+        TotalWPM = ((TotalHits / 5) / TotalTime);
+        TotalAccuracy = TotalCorrectHits * 100 / TotalHits;
 
-        ValueTuple<int, int, int> wordsCountStats = (CurrentWordsCount, BestWordsCount, TotalWordsCount);
-        ValueTuple<int, int, int> scoretStats = (CurrentScore, BestScore, TotalScore);
-        ValueTuple<float, float, float> timeStats = (CurrentTime, BestTime, TotalTime);
+        ValueTuple<double, double, double> time = (Math.Round(CurrentTime, 1), Math.Round(BestTime, 1), Math.Round(TotalTime, 1));
+        ValueTuple<double, double, double> wpm = (Math.Round(CurrentWPM, 1), Math.Round(BestWPM, 1), Math.Round(TotalWPM, 1));
+        ValueTuple<float, float, float> accuracy = (CurrentAccuracy, BestAccuracy, TotalAccuracy);
 
-        var stats = (scoretStats, wordsCountStats, timeStats);
+        var stats = (wpm, accuracy, time);
 
         UIManager.Instance.UpdateStats(stats);
-        UIManager.Instance.UpdateWPM(awpm);
     }
 
     public void SaveStats()
     {
-        PlayerPrefs.SetInt("BestWordsCount", BestWordsCount);
-        PlayerPrefs.SetInt("TotalWordsCount", TotalWordsCount);
+        PlayerPrefs.SetFloat("BestAccuracy", BestAccuracy);
+        PlayerPrefs.SetFloat("TotalAccuracy", TotalAccuracy);
 
-        PlayerPrefs.SetInt("BestScore", BestScore);
-        PlayerPrefs.SetInt("TotalScore", TotalScore);
+        PlayerPrefs.SetFloat("BestWPM", BestWPM);
+        PlayerPrefs.SetFloat("TotalWPM", TotalWPM);
 
         PlayerPrefs.SetFloat("BestTime", BestTime);
         PlayerPrefs.SetFloat("TotalTime", TotalTime);
+
+        PlayerPrefs.SetInt("TotalHits", TotalHits);
+        PlayerPrefs.SetInt("TotalCorrectHits", TotalCorrectHits);
     }
 
     public void LoadScene(string sceneName)
