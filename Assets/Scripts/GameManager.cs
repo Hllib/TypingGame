@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour
     public bool IsPaused { get; private set; }
     [SerializeField]
     private Keyboard _keyboard;
+
+    private static float CurrentWPM;
+    private static float BestWPM;
+    private static float TotalWPM;
 
     private static int CurrentScore;
     private static int BestScore;
