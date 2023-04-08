@@ -70,7 +70,5 @@ public class UIManager : MonoBehaviour
         _currentTime.text = statistics.Item3.Item1.ToString();
         _bestTime.text = statistics.Item3.Item2.ToString();
         _totalTime.text = statistics.Item3.Item3.ToString();
-
-        UpdateWPM(statistics.Item1.Item1);
     }
 }

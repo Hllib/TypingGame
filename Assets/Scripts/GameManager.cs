@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -59,17 +58,18 @@ public class GameManager : MonoBehaviour
         CurrentWPM = 0;
         BestWPM = PlayerPrefs.GetFloat("BestWPM", 0);
         TotalWPM = PlayerPrefs.GetFloat("TotalWPM", 0);
-        ValueTuple<float, float, float> wpm = (CurrentWPM, BestWPM, TotalWPM);
 
         CurrentAccuracy = 0;
         BestAccuracy = PlayerPrefs.GetFloat("BestAccuracy", 0);
         TotalAccuracy = PlayerPrefs.GetFloat("TotalAccuracy", 0);
-        ValueTuple<float, float, float> accuracy = (CurrentAccuracy, BestAccuracy, TotalAccuracy);
 
         CurrentTime = 0;
         BestTime = PlayerPrefs.GetFloat("BestTime", 0);
         TotalTime = PlayerPrefs.GetFloat("TotalTime", 0);
-        ValueTuple<float, float, float> time = (CurrentTime, BestTime, TotalTime);
+
+        ValueTuple<double, double, double> time = (Math.Round(CurrentTime, 1), Math.Round(BestTime, 1), Math.Round(TotalTime, 1));
+        ValueTuple<double, double, double> wpm = (Math.Round(CurrentWPM, 1), Math.Round(BestWPM, 1), Math.Round(TotalWPM, 1));
+        ValueTuple<float, float, float> accuracy = (CurrentAccuracy, BestAccuracy, TotalAccuracy);
 
         var stats = (wpm, accuracy, time);
 
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         var stats = (wpm, accuracy, time);
 
         UIManager.Instance.UpdateStats(stats);
+        UIManager.Instance.UpdateWPM(Math.Round(CurrentWPM * CurrentAccuracy / 100, 1));
     }
 
     public void SaveStats()
