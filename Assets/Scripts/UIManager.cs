@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _countdown;
     [SerializeField] private TextMeshProUGUI _wordsPerMinute;
+    [SerializeField] private GameObject _playButton;
 
     [Header("WPM")]
     [SerializeField] private TextMeshProUGUI _currentWPM;
@@ -55,6 +56,11 @@ public class UIManager : MonoBehaviour
     public void UpdateWPM(double wpm)
     {
         _wordsPerMinute.text = $"wpm : {wpm}";
+    }
+
+    public void ShowPlayBt(bool state)
+    {
+        _playButton.SetActive(state);
     }
 
     public void UpdateStats(((double, double, double), (float, float, float), (double, double, double)) statistics)

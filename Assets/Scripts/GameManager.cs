@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     private static float BestTime;
     private static float TotalTime;
 
+    public bool IsGameOver { get; set; }
+
     private static GameManager _instance;
 
     public static GameManager Instance
@@ -133,6 +135,8 @@ public class GameManager : MonoBehaviour
     {
         SaveStats();
         Time.timeScale = 1f;
+        IsGameOver = false;
+        UIManager.Instance.ShowPlayBt(true);
         LoadScene("Main");
     }
 
@@ -145,7 +149,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !IsGameOver)
         {
             CheckPauseState();
         }
