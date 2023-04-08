@@ -1406,7 +1406,7 @@ GameObject:
   - component: {fileID: 604876334}
   - component: {fileID: 604876333}
   m_Layer: 5
-  m_Name: 'Words_TMP '
+  m_Name: Accuracy_TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Words
+  m_text: Accuracy(%)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2780ceb4cea97c141be0dec811775fa6, type: 2}
   m_sharedMaterial: {fileID: -6168110105081514142, guid: 2780ceb4cea97c141be0dec811775fa6, type: 2}
@@ -2741,12 +2741,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _countdown: {fileID: 1065623260}
   _wordsPerMinute: {fileID: 1089091502}
-  _currentScore: {fileID: 871101050}
-  _bestScore: {fileID: 980565019}
-  _totalScore: {fileID: 1102035405}
-  _currentWordsCount: {fileID: 435968862}
-  _bestWordsCount: {fileID: 1923280039}
-  _totalWordsCount: {fileID: 179241345}
+  _currentWPM: {fileID: 871101050}
+  _bestWPM: {fileID: 980565019}
+  _totalWPM: {fileID: 1102035405}
+  _currentAccuracy: {fileID: 435968862}
+  _bestAccuracy: {fileID: 1923280039}
+  _totalAccuracy: {fileID: 179241345}
   _currentTime: {fileID: 289220888}
   _bestTime: {fileID: 1020072591}
   _totalTime: {fileID: 1849680654}
@@ -2762,7 +2762,7 @@ GameObject:
   - component: {fileID: 1183048124}
   - component: {fileID: 1183048123}
   m_Layer: 5
-  m_Name: Score_TMP
+  m_Name: WPM_TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score
+  m_text: WPM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2780ceb4cea97c141be0dec811775fa6, type: 2}
   m_sharedMaterial: {fileID: -6168110105081514142, guid: 2780ceb4cea97c141be0dec811775fa6, type: 2}
@@ -3509,7 +3509,7 @@ GameObject:
   - component: {fileID: 1457252729}
   - component: {fileID: 1457252728}
   m_Layer: 5
-  m_Name: WordsCount_numbers
+  m_Name: Accuracy_stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4954,7 +4954,7 @@ GameObject:
   - component: {fileID: 2053013211}
   - component: {fileID: 2053013210}
   m_Layer: 5
-  m_Name: Score_numbers
+  m_Name: WPM_stats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

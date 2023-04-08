@@ -23,11 +23,9 @@ public class Keyboard : MonoBehaviour
     private List<Key> _keyboardKeys;
     private char _userInput;
 
-    private int _correctHits = 0;
-    private int _totalHits = 0;
-
-    private int _currentScore;
-    private int _currentWordsCount;
+    private int _localCorrectHits;
+    private int _currentCorrectHits;
+    private int _totalHits;
     private float _currentTime;
 
     bool isFirstWordLoaded = false;
@@ -49,11 +47,7 @@ public class Keyboard : MonoBehaviour
 
     private void UpdateCurrentStats()
     {
-        _currentScore += _correctHits;
-        if (_correctHits > 0)
-        {
-            _currentWordsCount += 1;
-        }
+        _currentCorrectHits += _localCorrectHits;
         _currentTime = Time.time / 60;
     }
 
@@ -66,10 +60,10 @@ public class Keyboard : MonoBehaviour
         {
             if (isFirstWordLoaded)
             {
-                _playerCar.PushCar(_correctHits);
+                _playerCar.PushCar(_localCorrectHits);
                 UpdateCurrentStats();
-                GameManager.Instance.UpdateStats(_currentScore, _currentWordsCount, _currentTime, _totalHits);
-                _correctHits = 0;
+                GameManager.Instance.UpdateStats(_currentCorrectHits, _totalHits, _currentTime);
+                _localCorrectHits = 0;
             }
             else
             {
@@ -101,7 +95,7 @@ public class Keyboard : MonoBehaviour
                     _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, true);
                     _totalHits += 1;
-                    _correctHits += 1;
+                    _localCorrectHits += 1;
                     break;
                 }
                 else
