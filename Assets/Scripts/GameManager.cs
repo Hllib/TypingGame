@@ -176,6 +176,7 @@ public class GameManager : MonoBehaviour
 
     private void StopPause()
     {
+        UIManager.Instance.ShowBlur(false);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.windowOpen, Vector3.zero);
         Time.timeScale = 1f;
         Cursor.visible = false;
@@ -185,6 +186,7 @@ public class GameManager : MonoBehaviour
 
     private void StartPause()
     {
+        UIManager.Instance.ShowBlur(true);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.windowOpen, Vector3.zero);
         _keyboard.enabled = false;
         Time.timeScale = 0f;

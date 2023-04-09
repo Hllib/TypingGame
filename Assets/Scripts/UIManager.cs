@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _countdown;
     [SerializeField] private TextMeshProUGUI _wordsPerMinute;
     [SerializeField] private GameObject _playButton;
+    [SerializeField] private GameObject _blur;
+    [SerializeField] private GameObject _soundPanel;
 
     [Header("WPM")]
     [SerializeField] private TextMeshProUGUI _currentWPM;
@@ -41,6 +43,16 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+    }
+
+    private void Start()
+    {
+        _soundPanel.SetActive(false);   
+    }
+
+    public void ShowBlur(bool state)
+    {
+        _blur.SetActive(state);
     }
 
     public void StartCountDown()

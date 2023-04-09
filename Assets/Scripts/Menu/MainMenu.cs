@@ -84,4 +84,9 @@ public class MainMenu : MonoBehaviour
         panel.SetActive(false);
         _settingsButtonInteractionAllowed = true;
     }
+
+    private void Start()
+    {
+        _soundMenuPanel.SetActive(false);
+    }
 }

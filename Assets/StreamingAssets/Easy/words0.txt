@@ -20,7 +20,7 @@ cash
 bark
 issue
 carry
-Koran
+koran
 ruin
 truck
 drill
