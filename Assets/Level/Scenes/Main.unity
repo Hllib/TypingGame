@@ -849,7 +849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 42.18167, y: -17.956345}
+  m_AnchoredPosition: {x: 42.181667, y: -17.956345}
   m_SizeDelta: {x: 84.363335, y: 35.91269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &289220888
@@ -984,7 +984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 42.18167, y: -17.956345}
+  m_AnchoredPosition: {x: 42.181667, y: -17.956345}
   m_SizeDelta: {x: 84.363335, y: 35.91269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435968862
@@ -1298,6 +1298,13 @@ MonoBehaviour:
       Data3: 939136389
       Data4: -1192788734
     Path: event:/WindowOpen
+  <loseSound>k__BackingField:
+    Guid:
+      Data1: -442765996
+      Data2: 1145416757
+      Data3: -580833127
+      Data4: -1801617564
+    Path: event:/Lose
 --- !u!4 &563484667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
@@ -1392,7 +1399,7 @@ Animator:
   m_GameObject: {fileID: 588756553}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 393f5334b11f0d545b61a31b6a3de1a7, type: 2}
+  m_Controller: {fileID: 9100000, guid: af1bc16329795224e9c9c95c7754aaf5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -1871,7 +1878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 42.18167, y: -17.956345}
+  m_AnchoredPosition: {x: 42.181667, y: -17.956345}
   m_SizeDelta: {x: 84.363335, y: 35.91269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871101050

@@ -17,21 +17,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Keyboard _keyboard;
 
-    private static float CurrentWPM;
+    private float CurrentWPM;
     private static float BestWPM;
     private static float TotalWPM;
 
     private static int TotalHits;
     private static int TotalCorrectHits;
 
-    private static int CurrentTotalHits;
-    private static int CurrentCorrectHits;
+    private int CurrentTotalHits;
+    private int CurrentCorrectHits;
 
-    private static float CurrentAccuracy;
+    private float CurrentAccuracy;
     private static float BestAccuracy;
     private static float TotalAccuracy;
 
-    private static float CurrentTime;
+    private float CurrentTime;
     private static float BestTime;
     private static float TotalTime;
 

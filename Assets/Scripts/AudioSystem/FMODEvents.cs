@@ -13,6 +13,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference buttonHover { get; private set; }
     [field: SerializeField] public EventReference buttonClick { get; private set; }
     [field: SerializeField] public EventReference windowOpen { get; private set; }
+    [field: Header("General")]
+    [field: SerializeField] public EventReference loseSound { get; private set; }
 
     private static FMODEvents _instance;
 

@@ -48,7 +48,7 @@ public class Keyboard : MonoBehaviour
     private void UpdateCurrentStats()
     {
         _currentCorrectHits += _localCorrectHits;
-        _currentTime = Time.time / 60;
+        _currentTime = Time.timeSinceLevelLoad / 60;
     }
 
     private void Update()

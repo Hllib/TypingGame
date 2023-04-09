@@ -6,8 +6,8 @@ public struct ConstSettings
 {
     public struct EasyDiff
     {
-        public const float MinSpeed = 20.0f;
-        public const float MaxSpeed = 30.0f;
+        public const float MinSpeed = 15.0f;
+        public const float MaxSpeed = 25.0f;
     }
 
     public struct MediumDiff

@@ -9,5 +9,7 @@ public class Countdown : MonoBehaviour
         GameManager.Instance.CheckPauseState();
         UIManager.Instance.ShowPlayBt(false);
         GameManager.Instance.IsGameOver = true;
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.loseSound, Vector3.zero);
     }
 }
