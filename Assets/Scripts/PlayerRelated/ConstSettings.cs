@@ -18,7 +18,7 @@ public struct ConstSettings
 
     public struct HardDiff
     {
-        public const float MinSpeed = 35.0f;
-        public const float MaxSpeed = 60.0f;
+        public const float MinSpeed = 30.0f;
+        public const float MaxSpeed = 45.0f;
     }
 }

@@ -1277,6 +1277,27 @@ MonoBehaviour:
       Data3: 201168783
       Data4: -1741819397
     Path: event:/BgMusic
+  <buttonHover>k__BackingField:
+    Guid:
+      Data1: 2122118804
+      Data2: 1252422604
+      Data3: 443884436
+      Data4: 532140556
+    Path: event:/ButtonHover
+  <buttonClick>k__BackingField:
+    Guid:
+      Data1: -2000714442
+      Data2: 1130138233
+      Data3: -137233250
+      Data4: 1690000449
+    Path: event:/ButtonClick
+  <windowOpen>k__BackingField:
+    Guid:
+      Data1: -1142001883
+      Data2: 1174992099
+      Data3: 939136389
+      Data4: -1192788734
+    Path: event:/WindowOpen
 --- !u!4 &563484667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}

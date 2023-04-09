@@ -25,12 +25,12 @@ public class PlayerCar : MonoBehaviour
         }
     }
 
-    public void PushCar(float speedBonus)
+    public void SetCarSpeed(float typingSpeed)
     {
-        if (speedBonus > 0)
+        if (typingSpeed > 0)
         {
+            currentSpeed = typingSpeed;
             RestoreSpeed();
-            currentSpeed += speedBonus;
             StartCoroutine(SlowDown());
         }
     }
@@ -40,8 +40,9 @@ public class PlayerCar : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.25f);
-            currentSpeed -= 0.75f;
+            currentSpeed -= 0.5f;
         } while (currentSpeed > 0);
+        currentSpeed = 0f;
     }
 
     private void FixedUpdate()

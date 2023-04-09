@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
 
         UIManager.Instance.UpdateStats(stats);
         UIManager.Instance.UpdateWPM(Math.Round(CurrentWPM * CurrentAccuracy / 100, 1));
+        _playerCar.SetCarSpeed(Convert.ToInt32(Math.Round(CurrentWPM * CurrentAccuracy / 100, 0)));
     }
 
     public void SaveStats()

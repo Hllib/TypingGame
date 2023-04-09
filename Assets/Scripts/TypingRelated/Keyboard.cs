@@ -60,7 +60,6 @@ public class Keyboard : MonoBehaviour
         {
             if (isFirstWordLoaded)
             {
-                _playerCar.PushCar(_localCorrectHits);
                 UpdateCurrentStats();
                 GameManager.Instance.UpdateStats(_currentCorrectHits, _totalHits, _currentTime);
                 _localCorrectHits = 0;
