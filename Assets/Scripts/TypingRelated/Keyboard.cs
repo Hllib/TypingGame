@@ -96,12 +96,14 @@ public class Keyboard : MonoBehaviour
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, true);
                     _totalHits += 1;
                     _localCorrectHits += 1;
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.correctHit, Vector3.zero);
                     break;
                 }
                 else
                 {
                     _wordGenerator.currentWordLetters[i] = new Letter(_wordGenerator.currentWordLetters[i].Character, true);
                     WordPrinter.Instance.IndicateKeyCorrectHit(i, false);
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.missedHit, Vector3.zero);
                     _totalHits += 1;
                     break;
                 }

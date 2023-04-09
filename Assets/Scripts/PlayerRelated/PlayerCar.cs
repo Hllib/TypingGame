@@ -40,7 +40,7 @@ public class PlayerCar : MonoBehaviour
         do
         {
             yield return new WaitForSeconds(0.2f);
-            currentSpeed -= 0.5f;
+            currentSpeed -= 0.75f;
         } while (currentSpeed > 0);
     }
 
