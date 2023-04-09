@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MenuButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MenuButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Animator _animator;
 
@@ -15,10 +15,16 @@ public class MenuButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void OnPointerEnter(PointerEventData eventData)
     {
         _animator.SetTrigger("Enter");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonHover, Vector3.zero);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         _animator.SetTrigger("Exit");
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, Vector3.zero);
     }
 }

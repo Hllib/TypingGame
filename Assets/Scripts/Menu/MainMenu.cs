@@ -56,57 +56,32 @@ public class MainMenu : MonoBehaviour
     public void DeleteStats()
     {
         PlayerPrefs.DeleteAll();
+        _settingsMenuPanel.GetComponent<SettingsPanel>().SetDifficulty(0);
     }
 
-    public void ShowSettingsPanel()
+    public void ShowPanel(GameObject panel)
     {
-        if (!_settingsMenuPanel.activeInHierarchy)
+        if (!panel.activeInHierarchy)
         {
             if (_settingsButtonInteractionAllowed)
             {
-                _settingsMenuPanel.SetActive(true);
+                panel.SetActive(true);
             }
         }
         else
         {
-            StartCoroutine(HideSettingsPanel());
+            StartCoroutine(HideSettingsPanel(panel));
         }
     }
 
-    public void ShowSoundPanel()
-    {
-        if (!_soundMenuPanel.activeInHierarchy)
-        {
-            if (_settingsButtonInteractionAllowed)
-            {
-                _soundMenuPanel.SetActive(true);
-            }
-        }
-        else
-        {
-            StartCoroutine(HideSoundPanel());
-        }
-    }
-
-    IEnumerator HideSoundPanel()
+    IEnumerator HideSettingsPanel(GameObject panel)
     {
         _settingsButtonInteractionAllowed = false;
-        _soundMenuPanel.GetComponent<Animator>().SetTrigger("Hide");
+        panel.GetComponent<Animator>().SetTrigger("Hide");
 
         yield return new WaitForSeconds(1.5f);
 
-        _soundMenuPanel.SetActive(false);
-        _settingsButtonInteractionAllowed = true;
-    }
-
-    IEnumerator HideSettingsPanel()
-    {
-        _settingsButtonInteractionAllowed = false;
-        _settingsMenuPanel.GetComponent<Animator>().SetTrigger("Hide");
-
-        yield return new WaitForSeconds(1.5f);
-
-        _settingsMenuPanel.SetActive(false);
+        panel.SetActive(false);
         _settingsButtonInteractionAllowed = true;
     }
 }

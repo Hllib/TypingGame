@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
 
         UIManager.Instance.UpdateStats(stats);
         UIManager.Instance.UpdateWPM(Math.Round(CurrentWPM * CurrentAccuracy / 100, 1));
+        _playerCar.SetCarSpeed(Convert.ToInt32(Math.Round(CurrentWPM * CurrentAccuracy / 100, 0)));
     }
 
     public void SaveStats()
@@ -175,6 +176,7 @@ public class GameManager : MonoBehaviour
 
     private void StopPause()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.windowOpen, Vector3.zero);
         Time.timeScale = 1f;
         Cursor.visible = false;
         IsPaused = false;
@@ -183,6 +185,7 @@ public class GameManager : MonoBehaviour
 
     private void StartPause()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.windowOpen, Vector3.zero);
         _keyboard.enabled = false;
         Time.timeScale = 0f;
         Cursor.visible = true;
