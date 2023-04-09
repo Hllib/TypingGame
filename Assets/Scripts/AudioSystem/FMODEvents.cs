@@ -9,6 +9,11 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference correctHit { get; private set; }
     [field: SerializeField] public EventReference missedHit { get; private set; }
     [field: SerializeField] public EventReference music { get; private set; }
+    [field: Header("UI")]
+    [field: SerializeField] public EventReference buttonHover { get; private set; }
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
+    [field: SerializeField] public EventReference windowOpen { get; private set; }
+
     private static FMODEvents _instance;
 
     public static FMODEvents Instance
