@@ -13,12 +13,12 @@ public struct ConstSettings
     public struct MediumDiff
     {
         public const float MinSpeed = 25.0f;
-        public const float MaxSpeed = 35.0f;
+        public const float MaxSpeed = 40.0f;
     }
 
     public struct HardDiff
     {
-        public const float MinSpeed = 30.0f;
-        public const float MaxSpeed = 45.0f;
+        public const float MinSpeed = 35.0f;
+        public const float MaxSpeed = 50.0f;
     }
 }

@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
 
     private List<EventInstance> eventInstances;
     private EventInstance musicInstance;
+    private EventInstance carSoundsInstance;
 
     private static AudioManager _instance;
 
@@ -53,6 +54,10 @@ public class AudioManager : MonoBehaviour
         if (!FMODEvents.Instance.music.IsNull)
         {
             InitMusic(FMODEvents.Instance.music);
+        }
+        if(!FMODEvents.Instance.carSounds.IsNull)
+        {
+            InitCarSounds(FMODEvents.Instance.carSounds);
         }
     }
 
@@ -100,5 +105,17 @@ public class AudioManager : MonoBehaviour
     {
         musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         musicInstance.release();
+    }
+
+    public void InitCarSounds(EventReference soundsRef)
+    {
+        carSoundsInstance = CreateEventInstance(soundsRef);
+        carSoundsInstance.start();
+    }
+
+    public void StopCarSounds()
+    {
+        carSoundsInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        carSoundsInstance.release();
     }
 }

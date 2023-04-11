@@ -177,6 +177,7 @@ public class GameManager : MonoBehaviour
     private void StopPause()
     {
         UIManager.Instance.ShowBlur(false);
+        AudioManager.Instance.InitCarSounds(FMODEvents.Instance.carSounds);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.windowOpen, Vector3.zero);
         Time.timeScale = 1f;
         Cursor.visible = false;
@@ -188,6 +189,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.ShowBlur(true);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.windowOpen, Vector3.zero);
+        AudioManager.Instance.StopCarSounds();
         _keyboard.enabled = false;
         Time.timeScale = 0f;
         Cursor.visible = true;

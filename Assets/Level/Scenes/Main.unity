@@ -2042,6 +2042,13 @@ MonoBehaviour:
       Data3: 201168783
       Data4: -1741819397
     Path: event:/BgMusic
+  <carSounds>k__BackingField:
+    Guid:
+      Data1: 2067289855
+      Data2: 1268419974
+      Data3: -29305468
+      Data4: -1354033886
+    Path: event:/CarSounds
   <buttonHover>k__BackingField:
     Guid:
       Data1: 2122118804
@@ -2070,13 +2077,6 @@ MonoBehaviour:
       Data3: -580833127
       Data4: -1801617564
     Path: event:/Lose
-  <rivalCar>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <engineStart>k__BackingField:
     Guid:
       Data1: -998570363
@@ -8194,37 +8194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29102afb30960124d84c0e4606ce6ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &543450652352269347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635269281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1112424249
-      Data2: 1305115144
-      Data3: -878427499
-      Data4: 1361432590
-    Path: event:/playerCar
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 1
-  OverrideMinDistance: 10
-  OverrideMaxDistance: 30
 --- !u!1001 &707006251369524245
 PrefabInstance:
   m_ObjectHideFlags: 0
