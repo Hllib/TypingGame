@@ -14,13 +14,19 @@ public class MenuButtonAnimator : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _animator.SetTrigger("Enter");
+        if (_animator != null)
+        {
+            _animator.SetTrigger("Enter");
+        }
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonHover, Vector3.zero);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _animator.SetTrigger("Exit");
+        if (_animator != null)
+        {
+            _animator.SetTrigger("Exit");
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)

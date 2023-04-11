@@ -10898,7 +10898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6267005045709539052}
   m_Layer: 0
-  m_Name: Floor_var1
+  m_Name: InitialFloorTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

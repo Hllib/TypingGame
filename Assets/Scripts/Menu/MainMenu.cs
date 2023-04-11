@@ -1,4 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -57,6 +61,23 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         _settingsMenuPanel.GetComponent<SettingsPanel>().SetDifficulty(0);
+    }
+
+    public void ReadMoreButton()
+    {
+        string fileName = "linkToGit";
+        string readFromFilePath = Application.streamingAssetsPath + "/" + fileName + ".txt";
+        string link = "";
+
+        List<string> lines = File.ReadAllLines(readFromFilePath).ToList();
+        StringBuilder text = new StringBuilder();
+        foreach (string line in lines)
+        {
+            text.AppendLine(line);
+        }
+        link = text.ToString();
+
+        Application.OpenURL(link);
     }
 
     public void ShowPanel(GameObject panel)
