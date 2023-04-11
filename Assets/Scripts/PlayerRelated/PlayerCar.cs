@@ -14,6 +14,7 @@ public class PlayerCar : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _moveDirection = transform.forward;
         currentSpeed = 0f;
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.engineStart, this.transform.position);
     }
 
     private void RestoreSpeed()
