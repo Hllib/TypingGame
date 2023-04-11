@@ -63,8 +63,6 @@ public class RivalCar : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("Rival: " + _currentSpeed + " Player: " + _playerCar.currentSpeed + " Distance: " + _distanceToPlayer);
-
         _distanceToPlayer = transform.position.z - _playerCar.transform.position.z;
         if(_distanceToPlayer > CountdownStartDistance && !_isCountdownGoing)
         {
