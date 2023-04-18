@@ -7,17 +7,14 @@ using UnityEngine;
 
 public class Keyboard : MonoBehaviour
 {
-    const string upperRowString = "qwertyuiop";
-    const string middleRowString = "asdfghjkl";
-    const string bottomRowString = "zxcvbnm";
-    string firstFileName = "words0";
+    private const string UpperRowString = "qwertyuiop";
+    private const string MiddleRowString = "asdfghjkl";
+    private const string BottomRowString = "zxcvbnm";
+    private string _firstFileName = "words0";
 
-    [SerializeField]
-    private PlayerCar _playerCar;
-    [SerializeField]
-    private GameObject _keyPrefab;
-    [SerializeField]
-    private Transform[] _keyboardRows;
+    [SerializeField] private PlayerCar _playerCar;
+    [SerializeField] private GameObject _keyPrefab;
+    [SerializeField] private Transform[] _keyboardRows;
 
     private WordsGenerator _wordGenerator;
     private List<Key> _keyboardKeys;
@@ -28,14 +25,14 @@ public class Keyboard : MonoBehaviour
     private int _totalHits;
     private float _currentTime;
 
-    bool isFirstWordLoaded = false;
+    private bool _isFirstWordLoaded = false;
 
     private void Start()
     {
         InitFields();
         CreateKeyboard();
 
-        _wordGenerator.CreateWordsDictionary(firstFileName);
+        _wordGenerator.CreateWordsDictionary(_firstFileName);
     }
 
     private void InitFields()
@@ -51,14 +48,11 @@ public class Keyboard : MonoBehaviour
         _currentTime = Time.timeSinceLevelLoad / 60;
     }
 
-    private void Update()
+    private void CheckWordCompletion()
     {
-        if (Input.inputString != string.Empty)
-            _userInput = Input.inputString[0];
-
         if (_wordGenerator.currentWordLetters.All(letter => letter.WasPrinted == true))
         {
-            if (isFirstWordLoaded)
+            if (_isFirstWordLoaded)
             {
                 UpdateCurrentStats();
                 GameManager.Instance.UpdateStats(_currentCorrectHits, _totalHits, _currentTime);
@@ -66,10 +60,18 @@ public class Keyboard : MonoBehaviour
             }
             else
             {
-                isFirstWordLoaded = true;
+                _isFirstWordLoaded = true;
             }
             _wordGenerator.LoadNextWord();
         }
+    }
+
+    private void Update()
+    {
+        if (Input.inputString != string.Empty)
+            _userInput = Input.inputString[0];
+
+        CheckWordCompletion();  
 
         if (Input.anyKeyDown && _userInput != '\0')
         {
@@ -114,9 +116,9 @@ public class Keyboard : MonoBehaviour
     {
         List<char[]> keyboardsLetters = new List<char[]>()
         {
-            upperRowString.ToLower().ToCharArray(),
-            middleRowString.ToLower().ToCharArray(),
-            bottomRowString.ToLower().ToCharArray()
+            UpperRowString.ToLower().ToCharArray(),
+            MiddleRowString.ToLower().ToCharArray(),
+            BottomRowString.ToLower().ToCharArray()
         };
 
         for (int i = 0; i < keyboardsLetters.Count; i++)
