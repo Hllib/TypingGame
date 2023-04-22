@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &8856845907360109994
 Transform:
@@ -114,7 +114,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1098540787219978013
 Transform:
@@ -190,7 +190,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1098540788989760011
 Transform:
@@ -224,7 +224,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7450496912055585966
 Transform:
@@ -322,7 +322,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &6138036115189497654
 Transform:
@@ -420,7 +420,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &3890729763240045917
 Transform:
@@ -518,7 +518,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4325465749914670378
 Transform:
@@ -613,7 +613,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &3144741981424810595
 Transform:
@@ -693,7 +693,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &5538215283286158947
 Transform:
@@ -785,6 +785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -846,6 +850,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -909,6 +917,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -970,6 +982,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -1077,6 +1093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_ResidentBuilding_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1935404561151188300, guid: b6d2dcae7c7efd9459d35aefcaef9c80, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6d2dcae7c7efd9459d35aefcaef9c80, type: 3}
 --- !u!4 &1688160297526118825 stripped
@@ -1094,6 +1114,10 @@ PrefabInstance:
     - target: {fileID: 1621038925132134, guid: 1d2c6670233642f42a7b4c31bafce661, type: 3}
       propertyPath: m_Name
       value: Car_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1621038925132134, guid: 1d2c6670233642f42a7b4c31bafce661, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4426057040827280, guid: 1d2c6670233642f42a7b4c31bafce661, type: 3}
       propertyPath: m_RootOrder
@@ -1157,6 +1181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -1218,6 +1246,10 @@ PrefabInstance:
     - target: {fileID: 551710297913876012, guid: 47a2a9e39cc65834cb17ef7155da1e52, type: 3}
       propertyPath: m_Name
       value: Prop_StreetSign_Speed_30
+      objectReference: {fileID: 0}
+    - target: {fileID: 551710297913876012, guid: 47a2a9e39cc65834cb17ef7155da1e52, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 928798408869971094, guid: 47a2a9e39cc65834cb17ef7155da1e52, type: 3}
       propertyPath: m_RootOrder
@@ -1281,6 +1313,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -1342,6 +1378,10 @@ PrefabInstance:
     - target: {fileID: 6235451533658473188, guid: f763a8746b477b941bf6e84aea6e3864, type: 3}
       propertyPath: m_Name
       value: Prop_TrashBag_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235451533658473188, guid: f763a8746b477b941bf6e84aea6e3864, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6756268667665684574, guid: f763a8746b477b941bf6e84aea6e3864, type: 3}
       propertyPath: m_RootOrder
@@ -1405,6 +1445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1466,6 +1510,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -1573,6 +1621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_RoofVent_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7672113918056504102, guid: f74897866dd9f4f40a8665c68e2a5a30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f74897866dd9f4f40a8665c68e2a5a30, type: 3}
 --- !u!4 &8634197001991090146 stripped
@@ -1587,9 +1639,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1098540787219978013}
     m_Modifications:
+    - target: {fileID: 1746499531618830636, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3417581261440945244, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
       propertyPath: m_Name
       value: TallBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417581261440945244, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971642122262454701, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8385456422938656871, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
       propertyPath: m_RootOrder
@@ -1653,6 +1717,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -1714,6 +1782,10 @@ PrefabInstance:
     - target: {fileID: 5784995223130969209, guid: c24eb8b945e533543b57c77b18c13447, type: 3}
       propertyPath: m_Name
       value: Prop_RoadCone_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784995223130969209, guid: c24eb8b945e533543b57c77b18c13447, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6558294586299371203, guid: c24eb8b945e533543b57c77b18c13447, type: 3}
       propertyPath: m_RootOrder
@@ -1777,6 +1849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -1835,9 +1911,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1098540787219978013}
     m_Modifications:
+    - target: {fileID: 1746499531618830636, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3417581261440945244, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
       propertyPath: m_Name
       value: TallBuilding (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417581261440945244, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971642122262454701, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8385456422938656871, guid: ac954f555ceb6254abebf6783770c1e1, type: 3}
       propertyPath: m_RootOrder
@@ -1901,6 +1989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -1962,6 +2054,10 @@ PrefabInstance:
     - target: {fileID: 3603336323745648607, guid: 96b7ca556ce445e47830fa1101bcdd33, type: 3}
       propertyPath: m_Name
       value: Prop_Sofa_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603336323745648607, guid: 96b7ca556ce445e47830fa1101bcdd33, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4128199862358332773, guid: 96b7ca556ce445e47830fa1101bcdd33, type: 3}
       propertyPath: m_RootOrder
@@ -2032,6 +2128,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -2139,6 +2239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_CommercialBuilding_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4270132264586841546, guid: 36c588d4d2cea4543a8f06287520992c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36c588d4d2cea4543a8f06287520992c, type: 3}
 --- !u!4 &17264757016169881 stripped
@@ -2156,6 +2260,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -2219,6 +2327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2280,6 +2392,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -2343,6 +2459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2404,6 +2524,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -2467,6 +2591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -2529,6 +2657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -2587,9 +2719,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1098540787219978013}
     m_Modifications:
+    - target: {fileID: 145874091583696536, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_Name
       value: Car_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118406335243026053, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3239481311355110186, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_RootOrder
@@ -2635,6 +2779,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3403330060719273833, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104092311359671861, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911597352165467291, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
 --- !u!4 &1368878727122119971 stripped
@@ -2652,6 +2808,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -2715,6 +2875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -2776,6 +2940,10 @@ PrefabInstance:
     - target: {fileID: 6235451533658473188, guid: f763a8746b477b941bf6e84aea6e3864, type: 3}
       propertyPath: m_Name
       value: Prop_TrashBag_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235451533658473188, guid: f763a8746b477b941bf6e84aea6e3864, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6756268667665684574, guid: f763a8746b477b941bf6e84aea6e3864, type: 3}
       propertyPath: m_RootOrder
@@ -2839,6 +3007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -2900,6 +3072,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -2963,6 +3139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -3025,6 +3205,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -3083,9 +3267,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1098540787219978013}
     m_Modifications:
+    - target: {fileID: 145874091583696536, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_Name
       value: Car_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3118406335243026053, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3239481311355110186, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_RootOrder
@@ -3131,6 +3327,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3403330060719273833, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104092311359671861, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911597352165467291, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
 --- !u!4 &9192235404032355895 stripped
@@ -3148,6 +3356,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -3211,6 +3423,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -3273,6 +3489,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -3331,14 +3551,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1098540787219978013}
     m_Modifications:
+    - target: {fileID: 145874091583696536, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_Name
       value: Car_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 899505247492489310, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 988261874739299913, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9b97f746920d65e46927dcd304fd181e, type: 2}
+    - target: {fileID: 3118406335243026053, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3239481311355110186, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3383,6 +3615,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3403330060719273833, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104092311359671861, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6911597352165467291, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52e3f6297379ffa48954392c6d79ef4e, type: 3}
 --- !u!4 &8374458993283589144 stripped
@@ -3400,6 +3644,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -3463,6 +3711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -3524,6 +3776,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -3587,6 +3843,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -3648,6 +3908,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -3711,6 +3975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -3772,6 +4040,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -3835,6 +4107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -3896,6 +4172,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -3959,6 +4239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -4020,6 +4304,10 @@ PrefabInstance:
     - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_Name
       value: Sidewalk_01 (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
@@ -4083,6 +4371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sidewalk_01 (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 1741318463340700, guid: 969a3632f931c5340b716450db8b4132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4887987506020596, guid: 969a3632f931c5340b716450db8b4132, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -4144,6 +4436,10 @@ PrefabInstance:
     - target: {fileID: 675209093200180805, guid: cf29fabe5be425d4fa58702a405410ec, type: 3}
       propertyPath: m_Name
       value: Light_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 675209093200180805, guid: cf29fabe5be425d4fa58702a405410ec, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8082565330314397969, guid: cf29fabe5be425d4fa58702a405410ec, type: 3}
       propertyPath: m_RootOrder
@@ -4251,6 +4547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House_16
       objectReference: {fileID: 0}
+    - target: {fileID: 8641047332714037405, guid: dab3d93fd2764dc45988adf7d412c1b3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab3d93fd2764dc45988adf7d412c1b3, type: 3}
 --- !u!4 &3152718888980007609 stripped
@@ -4268,6 +4568,10 @@ PrefabInstance:
     - target: {fileID: 176465215707318053, guid: 2557362e4e8bcfe4486030fd8a78182a, type: 3}
       propertyPath: m_Name
       value: House_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 176465215707318053, guid: 2557362e4e8bcfe4486030fd8a78182a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1420943568377158471, guid: 2557362e4e8bcfe4486030fd8a78182a, type: 3}
       propertyPath: m_RootOrder
